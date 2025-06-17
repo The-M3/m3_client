@@ -11,18 +11,14 @@
   .heading {
     font-family: 'TT-variable', sans-serif;
     font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    
+    font-weight: 900;    
     @media (min-width: 768px) {
       font-size: 8rem;
     }
   }
 
   .subheading {
-    font-size: 2rem;
-    line-height: 1.5;
+    font-size: 2.4rem;
     margin-bottom: 5rem;
     max-width: 80rem;
     
@@ -33,16 +29,9 @@
 
   .featuresGrid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
-    
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+
   }
 
   .featureCard {
@@ -57,6 +46,7 @@
     &Top{
       display: flex;
       justify-content: space-between;
+      margin-bottom: 8rem;
     }
     
     .featureNumber {
@@ -65,12 +55,15 @@
       align-items: center;
       width: 5rem;
       height: 5rem;
-      background-color: var(--white);
-      color: var(--button-color);
+      background-color: var(--background);
+      color: var(--text-color);
       border-radius: 50%;
-      font-size: 2.4rem;
+      font-size: 4rem;
       font-weight: bold;
       margin-bottom: 2rem;
+      font-family: 'TT-variable', sans-serif;
+      font-weight: 900;
+
     }
     
     .featureIcon {
@@ -86,16 +79,15 @@
     
     .featureTitle {
       font-family: 'TT-variable', sans-serif;
-      font-size: 3.2rem;
+      font-size: 5rem;
       font-weight: 700;
       margin-bottom: 2rem;
-      text-align: center;
+      color: var(--background);
     }
     
     .featureDescription {
       font-size: 1.8rem;
       line-height: 1.6;
-      text-align: center;
       flex-grow: 1;
     }
   }
