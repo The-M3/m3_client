@@ -1,13 +1,14 @@
 .heroSection {
   padding-top: 13rem;
   padding-bottom: 4rem;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   padding-left: 2rem;
   padding-right: 2rem;
+  max-width: 100%;
+  overflow-x: hidden;
 
   @media (min-width: 768px) {
     padding-top: 15rem;
@@ -75,24 +76,28 @@
   }
 
   .imageContainer {
-    flex: 1.2;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    order: -1; // Shows image first on mobile
     align-self: flex-start;
+    max-width: 100%;
 
     
     @media (min-width: 768px) {
-      order: 0; // Restores original order on larger screens
+      flex: 1.2
     }
     
     .heroImage {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: 300px;
+      border-radius: 0.44rem;
       object-fit: cover;
       aspect-ratio: 16/9;
+      background-color: #e0e0e0;
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
     }
   }
 }

@@ -12,12 +12,7 @@ const HeroSection = () => {
       <div className={styles.descriptionContainer}>
         <div className={styles.imageContainer}>
           {/* Using a placeholder for the hero image */}
-          <div className={styles.heroImage} style={{
-            backgroundColor: '#e0e0e0',
-            width: '100%',
-            height: '300px',
-            position: 'relative'
-          }}>
+          <div className={styles.heroImage}>
             <Image
               src="/images/heroImage.png"
               alt="A group of African professionals looking at a laptop"
