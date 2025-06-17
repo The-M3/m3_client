@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <Image
-          src="/appIcon.svg"
+          src="/svgs/appIcon.svg"
           alt="The M3"
           width={80}
           height={40}
@@ -27,7 +27,13 @@ const Navbar = () => {
       </div>
 
       <button className={styles.menuButton} onClick={toggleMenu}>
-        {isMenuOpen ? '✕' : '☰'}
+        <Image
+          src={isMenuOpen ? "/svgs/closeicon.svg" : "/svgs/menuicon.svg"}
+          alt="Menu"
+          width={24}
+          height={24}
+          priority
+        />
       </button>
 
       <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>

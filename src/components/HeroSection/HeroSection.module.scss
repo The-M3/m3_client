@@ -1,42 +1,94 @@
 .heroSection {
-  padding-top: 20rem;
+  padding-top: 13rem;
   padding-bottom: 4rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media (min-width: 768px) {
+    padding-top: 15rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding-top: 20rem;
+  }
 
   .heading {
     font-family: 'TT-variable', sans-serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
     
     @media (min-width: 768px) {
-      font-size: 8rem;
+      font-size: 6rem;
+      text-align: left;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 10rem;
     }
   }
 
   .descriptionContainer {
     display: flex;
-    gap: 4.7rem;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    @media (min-width: 1024px) {
+      gap: 4.7rem;
+    }
   }
 
   .description {
-    font-size: 2.6rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
+    line-height: 1.5;
+    flex: 1;
+    align-self: flex-start;
+    
+    button {
+      margin-top: .8rem;
+      color: var(--background);
+      font-size: 2.8rem;
+    }
+    
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 2.6rem;
+    }
   }
 
   .imageContainer {
-    flex: 1;
+    flex: 1.2;
     display: flex;
     justify-content: center;
     align-items: center;
+    order: -1; // Shows image first on mobile
+    align-self: flex-start;
+
+    
+    @media (min-width: 768px) {
+      order: 0; // Restores original order on larger screens
+    }
     
     .heroImage {
       width: 100%;
-      max-width: 500px;
       height: auto;
       border-radius: 8px;
       object-fit: cover;
