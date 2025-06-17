@@ -1,7 +1,23 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F4EEDB; /* Cream/beige background */
+  --foreground: #243c23; /* Dark green text color */
+  --button-color: #25402D;
+  --button-hover: #3a6538;
+  --text-color: #122016;
+  --white: #fff;
+  --page-maxwidth: 1233px;
 }
+
+@font-face {
+  font-family: 'TT-variable';
+  src: url('/fonts/TT Trailers Trial Variable.ttf');
+}
+
+@font-face {
+  font-family: 'Plantin MT Pro';
+  src: url('/fonts/PlantinMTProLight.TTF');
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -12,14 +28,19 @@
 
 html,
 body {
-  max-width: 100vw;
   overflow-x: hidden;
+  max-width: var(--page-maxwidth);
+  margin: 0 auto;
+
+}
+html {
+  font-size: 62.5%
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Plantin MT Pro', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

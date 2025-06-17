@@ -1,0 +1,46 @@
+.heroSection {
+  padding-top: 20rem;
+  padding-bottom: 4rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .heading {
+    font-family: 'TT-variable', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    
+    @media (min-width: 768px) {
+      font-size: 8rem;
+    }
+  }
+
+  .descriptionContainer {
+    display: flex;
+    gap: 4.7rem;
+  }
+
+  .description {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .heroImage {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      aspect-ratio: 16/9;
+    }
+  }
+}

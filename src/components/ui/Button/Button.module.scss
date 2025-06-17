@@ -1,0 +1,17 @@
+.button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 0.728rem 1.164rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 2.8rem;
+    transition: background-color 0.2s ease;
+    font-family: 'TT-variable', sans-serif;
+    border-radius: 0.22rem;
+
+    
+    &:hover {
+      background-color: var(--button-hover);
+    }
+  }
