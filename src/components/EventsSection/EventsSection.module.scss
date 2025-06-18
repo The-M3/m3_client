@@ -1,0 +1,186 @@
+.eventsSection {
+  background-color: var(--button-color);
+  padding: 6rem 2rem;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20rem;
+
+  .title {
+    font-family: 'TT-variable', sans-serif;
+    font-size: 6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 6rem;
+    color: #DAA765;
+
+    @media (min-width: 768px) {
+      font-size: 8rem;
+    }
+  }
+
+  .eventGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
+
+    > :first-child {
+      grid-row: auto;
+    }
+
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1.3fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+
+      > :first-child {
+        grid-row: 1 / span 3;
+        /* span all 3 rows in the first column */
+      }
+    }
+  }
+  .featuredEvent {  
+
+    > * {
+      padding: 4rem;
+    }
+ 
+    &Top{
+      border-top-left-radius: 0.8rem;
+      border-top-right-radius: 0.8rem;
+      background-color: var(--background);
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 -150px 30px 15px rgba(0,0,0, 0.2) inset;
+      .eventImage{
+        height: 100%;
+      } 
+    }
+    &Bottom{
+      background-color: var(--background);
+      border-bottom-left-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+  }  
+
+  .eventContent{
+    margin-top: 8rem;
+  }
+
+  .eventSpeakers{
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .ticketButton{
+    font-size: 2.8rem;
+    color: var(--background);
+  }
+
+  .eventTitle{
+    font-family: 'TT-variable', sans-serif;
+    font-size: 4rem;
+    color: var(--white);
+
+    @media (min-width: 768px) {
+      font-size: 5.6rem;
+    }
+  }
+
+  .eventLocation{
+    font-size: 1.6rem;
+    color: #FFFFFFB2;
+
+
+    @media (min-width: 768px) {
+    }
+  }
+
+  .eventDate{
+    font-size: 1.6rem;
+    color: #FFFFFFB2;
+  }
+  .eventDescription{
+    font-size: 1.8rem;
+    
+  }
+
+  .upcomingEvent{
+    background-color: var(--background);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 0rem 2rem;
+
+    &Date{
+      font-size: 14.911rem;
+      color: #33333399;
+      font-family: 'TT-LightItalic', sans-serif;
+      white-space: nowrap;
+    }
+    &Content{
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      margin-top: 3rem;
+    }
+    &Title{
+      font-family: 'TT-variable', sans-serif;
+      font-size: 3rem;
+      line-height: 3.2rem;
+    }
+    &Button{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      align-self: self-start;
+      font-size: 1.6rem;
+      padding: 0.3rem 3rem;
+    }
+  
+    
+  }
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  gap: 1.25rem;
+  width: max-content;
+  
+}
+
+.box {
+  text-align: center;
+}
+
+.value {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  font-family: 'TT-variable', sans-serif;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.separator {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: -0.5rem;
+}

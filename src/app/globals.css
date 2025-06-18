@@ -14,6 +14,16 @@
 }
 
 @font-face {
+  font-family: 'TT-Italic';
+  src: url('/fonts/TT Trailers Trial Italic.ttf');
+}
+
+@font-face {
+  font-family: 'TT-LightItalic';
+  src: url('/fonts/TT Trailers Trial Light Italic.ttf');
+}
+
+@font-face {
   font-family: 'Plantin MT Pro';
   src: url('/fonts/PlantinMTProLight.TTF');
 }
@@ -30,6 +40,7 @@ html,
 body {
   overflow-x: hidden;
   max-width: var(--page-maxwidth);
+  color: var(--text-color);
   margin: 0 auto;
 
 }
