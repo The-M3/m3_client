@@ -72,7 +72,7 @@ const EventsSection = () => {
     title: "Securing Africa's Digital Wallets",
     location: "Lagos, Nigeria",
     date: "2025-06-22T16:00:00",
-    description: "Discover the critical security strategies fintech leaders are using to protect digital wallets across the continent. Adaobi will share real-world breach case studies, encryption standards, and how to stay compliant in a shifting regulatory landscape.",
+    description: "Discover the critical security strategies fintech leaders are using to protect digital wallets across the continent. Adaobi will share real-world breach case studies, encryption standards, and how to stay compliant in a shifting regulatory landscape.Discover the critical security strategies fintech Discover the critical security strategies fintech Discover the critical security strategies fintech",
     speakers: "John Doe, Jane Smith",
     imageSrc: "/images/featureImage.png"
   }
