@@ -87,15 +87,15 @@ const EventsSection = () => {
 
         <UpcomingEvent
           date="2025-06-22T16:00:00"
-          title="How Central Bank’s Policies Shape Fintech Startups hello"
+          title="How Central Bank’s Policies Shape Fintech Startups"
         />
         <UpcomingEvent
           date="2025-07-04T16:00:00"
-          title="How Central Bank’s Policies Shape Fintech Startups hello"
+          title="How Central Bank’s Policies Shape Fintech Startups"
         />
         <UpcomingEvent
           date="2025-08-15T16:00:00"
-          title="How Central Bank’s Policies Shape Fintech Startups hello"
+          title="How Central Bank’s Policies Shape Fintech Startups"
         />
       </div>
 
