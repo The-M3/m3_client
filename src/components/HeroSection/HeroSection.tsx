@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section className={styles.heroSection}>
       <h1 className={styles.heading}>
-        Community of Africa's Technologists Building the Future of Payment
+        Community of Africa&apos;s Technologists Building the Future of Payment
       </h1>
       <div className={styles.descriptionContainer}>
         <div className={styles.imageContainer}>
@@ -24,7 +24,7 @@ const HeroSection = () => {
         </div>
         <div className={styles.description}>
           <p>
-            At The M3, we're uniting the brightest minds building Africa's payment systems from infrastructure engineers to fintech founders.
+            At The M3, we&apos;re uniting the brightest minds building Africa&apos;s payment systems from infrastructure engineers to fintech founders.
           </p>
           <Button>
             JOIN OUR COMMUNITY
