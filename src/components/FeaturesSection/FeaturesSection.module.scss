@@ -6,7 +6,9 @@
 
   @media (min-width: 768px) {
       margin-top: 12.9rem;
-      padding:0;
+    }
+    @media (min-width: 1024px) {
+      padding: 0;
     }
 
   .heading {
