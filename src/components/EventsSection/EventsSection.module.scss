@@ -119,21 +119,33 @@
     padding: 0rem 2rem;
 
     &Date{
-      font-size: 14.911rem;
+      font-size: 12rem;
       color: #33333399;
       font-family: 'TT-LightItalic', sans-serif;
       white-space: nowrap;
+
+      @media (min-width: 768px) {
+        font-size: 14.911rem;
+      }
     }
     &Content{
       display: flex;
       flex-direction: column;
-      gap: 1.4rem;
-      margin-top: 3.5rem;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      @media (min-width: 768px) {
+        gap: 1.4rem;
+        margin-top: 3.5rem;
+      }
     }
     &Title{
       font-family: 'TT-variable', sans-serif;
-      font-size: 3rem;
+      font-size: 2rem;
       line-height: 3.2rem;
+      @media (min-width: 768px) {
+        font-size: 3rem;
+        line-height: 3.2rem;
+      }
     }
     &Button{
       display: flex;
@@ -141,7 +153,11 @@
       gap: 1rem;
       align-self: self-start;
       font-size: 1.6rem;
-      padding: 0.3rem 3rem;
+      padding: 0.3rem 2rem;
+      @media (min-width: 768px) {
+        font-size: 1.6rem;
+        padding: 0.3rem 3rem;
+      }
     }
   
     
