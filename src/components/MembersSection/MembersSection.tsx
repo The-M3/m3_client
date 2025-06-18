@@ -91,7 +91,7 @@ const MembersSection: React.FC = () => {
           <h2 className={styles.title}>For Builders by Builders</h2>
           <p className={styles.subtitle}>
             A spotlight on standout members of The M3, sharing what the community 
-            means to them and their role in shaping Africa's payment future.
+            means to them and their role in shaping Africa&apos;s payment future.
           </p>
         </div>
         
