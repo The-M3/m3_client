@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import EventsSection from "../components/EventsSection";
 import MembersSection from "../components/MembersSection";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <FeaturesSection />
       <EventsSection />
       <MembersSection />
+      <Footer />
     </>
   );
 }

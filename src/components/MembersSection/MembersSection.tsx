@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from './MembersSection.module.scss';
 
 interface Member {
@@ -86,7 +85,6 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
 const MembersSection: React.FC = () => {
   return (
     <section className={styles.membersSection}>
-      <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>For Builders by Builders</h2>
           <p className={styles.subtitle}>
@@ -100,7 +98,6 @@ const MembersSection: React.FC = () => {
             <MemberCard key={member.id} member={member} />
           ))}
         </div>
-      </div>
     </section>
   );
 };
