@@ -31,10 +31,10 @@
 
 html,
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden;
   max-width: var(--page-maxwidth);
+  margin: 0 auto; */
   color: var(--text-color);
-  margin: 0 auto;
 
 }
 html {

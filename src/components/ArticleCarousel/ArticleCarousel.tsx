@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './ArticleCarousel.module.scss';
 
 interface Article {
@@ -59,9 +58,42 @@ const ArticleCard: React.FC<{ article: Article }> = ({ article }) => {
 };
 
 const ArticleCarousel: React.FC = () => {
+  
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [eventsLeftOffset, setEventsLeftOffset] = useState<number>(0);
+  const carouselRef = useRef<HTMLElement>(null);
+  
   const cardsToShow = 2;
   const maxIndex = articlesData.length - cardsToShow;
+
+  // Dynamically measure EventsSection left offset
+  useEffect(() => {
+    const measureEventsOffset = () => {
+      // Look for EventsSection by class name pattern
+      const eventsSection = document.querySelector('[class*="eventsSection"]') as HTMLElement;
+      
+      if (eventsSection) {
+        const rect = eventsSection.getBoundingClientRect();
+        const leftOffset = rect.left + window.scrollX;
+        setEventsLeftOffset(leftOffset);
+        
+        // Apply the offset to carousel track padding
+        if (carouselRef.current) {
+          const carouselTrack = carouselRef.current.querySelector('[class*="carouselTrack"]') as HTMLElement;
+          if (carouselTrack) {
+            // carouselTrack.style.paddingLeft = `${leftOffset}px`;
+          }
+        }
+      }
+    };
+
+    // Measure on mount and window resize
+    measureEventsOffset();
+    window.addEventListener('resize', measureEventsOffset);
+    
+    // Cleanup event listener
+    return () => window.removeEventListener('resize', measureEventsOffset);
+  }, []);
 
   const handlePrevious = () => {
     setCurrentIndex((prev) => Math.max(0, prev - 1));
@@ -78,7 +110,7 @@ const ArticleCarousel: React.FC = () => {
   }
 
   return (
-    <section className={styles.articleCarousel}>
+    <section className={styles.articleCarousel} ref={carouselRef} style={{marginLeft: eventsLeftOffset}}>
       <div className={styles.articleHeader}>
         <h2 className={styles.articleTitle}>From Across The M3</h2>
         <p className={styles.articleSubtitle}>

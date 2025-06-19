@@ -1,4 +1,6 @@
+@import "../../styles/mixins.scss";
 .eventsSection {
+  @include page;
   background-color: var(--button-color);
   padding: 6rem 2rem;
   width: 100%;

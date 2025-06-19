@@ -2,6 +2,8 @@
   position: fixed;
   top: 2rem;
   width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: var(--page-maxwidth);  
   margin: 0 auto;
   background-color: #fff;
@@ -14,10 +16,7 @@
   border-radius: 0.4rem;
   border: 1px solid #DAA765;
   
-  .logo {
 
-  }
-  
   .navLinks {
     display: flex;
     gap: 2rem;

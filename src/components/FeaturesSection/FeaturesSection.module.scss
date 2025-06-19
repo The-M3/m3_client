@@ -1,6 +1,8 @@
+@import "../../styles/mixins.scss";
+
 .featuresSection {
+  @include page;
   padding: 0 2rem;
-  width: 100%;
   background-color: var(--background);
   margin-top: 4.9rem;
 

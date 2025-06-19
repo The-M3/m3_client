@@ -1,4 +1,7 @@
+@import "../../styles/mixins.scss";
+
 .footer {
+  @include page;
   background-color: var(--text-color); // Dark green background
   padding: 4rem;
   margin-top: 10rem;

@@ -1,0 +1,5 @@
+@mixin page {
+    overflow-x: hidden;
+    max-width: var(--page-maxwidth);
+    margin: 0 auto;
+}

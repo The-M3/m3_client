@@ -1,9 +1,8 @@
 .articleCarousel {
   padding: 0 2rem;
-  max-width: var(--page-maxwidth);
-  margin: 0 auto;
   margin-top: 10rem;
   position: relative;
+  overflow-x: hidden; 
   
   // Create overlay shadow using pseudo-element
   &::before {
@@ -14,7 +13,7 @@
     right: 0;
     bottom: 0;
     box-shadow: -150px 0 60px rgba(244, 238, 219, 0.6) inset;
-    pointer-events: none; // Allow clicks to pass through
+    pointer-events: none;
     z-index: 10;
   }
 
@@ -47,6 +46,7 @@
   .articleSubtitle {
     font-size: 1.8rem;
     color: var(--text-color);
+    font-weight: 400;
     
     @media (min-width: 768px) {
       font-size: 2rem;
@@ -59,8 +59,7 @@
 
   .carouselContainer {
     position: relative;
-    // overflow: hidden;
-
+    overflow-x: hidden; // Allow carousel to break out of container
   }
 
   .carouselTrack {
