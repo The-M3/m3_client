@@ -95,7 +95,7 @@ const SponsorsSection: React.FC = () => {
         <div className={styles.leftContent}>
           <h2 className={styles.title}>Our Sponsors</h2>
           <p className={styles.description}>
-            The M3 is backed by organizations that believe in infrastructure, collaboration, and the future of African payments. Sponsoring The M3 means direct access to Africa's top CTOs, engineers, and decision-makers, plus the opportunity to lead conversations that shape the continent's fintech landscape.
+            The M3 is backed by organizations that believe in infrastructure, collaboration, and the future of African payments. Sponsoring The M3 means direct access to Africa&apos;s top CTOs, engineers, and decision-makers, plus the opportunity to lead conversations that shape the continent&apos;s fintech landscape.
           </p>
           <Button className={styles.sponsorButton}>
             BECOME A SPONSOR
