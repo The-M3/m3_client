@@ -102,7 +102,7 @@ const SponsorsSection: React.FC = () => {
         </div>
         
         <div className={styles.logosContainer}>
-            {sponsorsData.map((sponsor, index) => (
+            {sponsorsData.map((sponsor) => (
                 <div 
                   key={sponsor.id} 
                   className={styles.logoItem} 
