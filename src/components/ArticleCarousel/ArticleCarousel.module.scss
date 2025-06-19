@@ -108,14 +108,10 @@
   }
 
   .content {
-    padding: 3rem;
+    padding-top: 3rem;
     flex: 1;
     display: flex;
     flex-direction: column;
-    
-    @media (min-width: 768px) {
-      padding: 3.5rem;
-    }
   }
 
   .title {
@@ -123,21 +119,21 @@
     font-size: 2.4rem;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--text-color);
+    color: var(--button-color);
     margin-bottom: 1.5rem;
     
     @media (min-width: 768px) {
-      font-size: 2.8rem;
+      font-size: 3.5rem;
     }
     
     @media (min-width: 1024px) {
-      font-size: 3.2rem;
+      font-size: 5.9rem;
     }
   }
 
   .description {
     font-size: 1.6rem;
-    line-height: 1.6;
+    line-height: 3.2rem;
     color: #666;
     flex: 1;
     
@@ -146,7 +142,7 @@
     }
     
     @media (min-width: 1024px) {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
   }
 
