@@ -1,0 +1,170 @@
+@import "../../styles/mixins.scss";
+
+.sponsorsSection {
+  @include page;
+  background-color: var(--background);
+  padding: 0 2rem;
+  margin-top: 10rem;
+  position: relative;
+  
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  position: relative;
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+}
+
+.leftContent {
+  z-index: 2;
+  
+  @media (min-width: 1024px) {
+    padding-right: 4rem;
+  }
+}
+
+.title {
+  font-family: 'TT-variable', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--button-color);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  
+  @media (min-width: 768px) {
+    font-size: 6rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 10rem;
+  }
+}
+
+.description {
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  margin-bottom: 2rem;
+  
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 2.4rem;
+  }
+}
+
+.sponsorButton {
+  font-size: 2.8rem;
+  font-weight: 800;
+  padding: 1.2rem 5rem;
+
+}
+
+.logosContainer {
+  position: relative;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-content: center;
+  justify-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 140px 40px rgba(244, 238, 219, 0.7) inset, 0 -120px 40px rgba(244, 238, 219, 0.9) inset;
+    pointer-events: none;
+    z-index: 10;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+  }
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  opacity: 0.9;
+  animation: float 6s ease-in-out infinite;
+  
+  // Dynamic animation delay using CSS custom property
+  animation-delay: var(--animation-delay, 0s);
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  span {
+    white-space: nowrap;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  @media (min-width: 768px) {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.8rem;
+    gap: 1.2rem;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  50% {
+    transform: translateY(0px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(5px) translateX(3px);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 1023px) {
+  .logoRow {
+    position: static !important;
+    justify-content: center;
+    margin-bottom: 2rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

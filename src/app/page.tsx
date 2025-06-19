@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import EventsSection from "../components/EventsSection";
 import MembersSection from "../components/MembersSection";
+import SponsorsSection from "../components/SponsorsSection";
 import ArticleCarousel from "../components/ArticleCarousel";
 import Footer from "../components/Footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <EventsSection />
       <MembersSection />
       <ArticleCarousel />
+      <SponsorsSection />
       <Footer />
     </>
   );
