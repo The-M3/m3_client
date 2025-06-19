@@ -1,0 +1,198 @@
+.articleCarousel {
+  // padding: 6rem 2rem;
+  max-width: var(--page-maxwidth);
+  margin: 0 auto;
+  margin-top: 10rem;
+  position: relative;
+  
+  // Create overlay shadow using pseudo-element
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: -150px 0 60px rgba(244, 238, 219, 0.6) inset;
+    pointer-events: none; // Allow clicks to pass through
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    // padding: 8rem 4rem;
+  }
+  
+  @media (min-width: 1024px) {
+    // padding: 10rem 6rem;
+  }
+
+  .articleHeader {
+    margin-bottom: 3rem;
+  }
+
+  .articleTitle {
+    font-family: 'TT-variable', sans-serif;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    
+    @media (min-width: 768px) {
+      font-size: 10rem;
+      text-align: left;
+    }
+  }
+
+  .articleSubtitle {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .carouselContainer {
+    position: relative;
+    // overflow: hidden;
+
+  }
+
+  .carouselTrack {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 3rem;
+    
+    @media (min-width: 768px) {
+      gap: 4rem;
+    }
+  }
+
+  .carouselSlide {
+    flex: 0 0 calc(100% - 1.5rem); // Full width on mobile minus gap
+    
+    @media (min-width: 768px) {
+      flex: 0 0 calc(45% - 2rem); // 2 cards visible on desktop minus gap
+    }
+  }
+
+  .articleCard {
+    background-color: var(--background);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 250px;
+    background-color: #D3D3D3; // Grey background for placeholder
+    
+    @media (min-width: 768px) {
+      height: 300px;
+    }
+    
+    @media (min-width: 1024px) {
+      height: 350px;
+    }
+  }
+
+  .content {
+    padding: 3rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+    @media (min-width: 768px) {
+      padding: 3.5rem;
+    }
+  }
+
+  .title {
+    font-family: 'TT-variable', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    
+    @media (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 3.2rem;
+    }
+  }
+
+  .description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #666;
+    flex: 1;
+    
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+    }
+    
+    @media (min-width: 1024px) {
+      font-size: 2rem;
+    }
+  }
+
+  // Navigation buttons
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--white);
+    border: 2px solid #DAA765;
+    color: #DAA765;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    @media (min-width: 768px) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .prevButton {
+    left: -0;
+    transform: rotate(180deg);
+  }
+
+  .nextButton {
+    right: -0;
+  }
+
+  // Hide navigation on mobile if needed
+  @media (max-width: 767px) {
+    .navButton {
+      display: none;
+    }
+  }
+
+}

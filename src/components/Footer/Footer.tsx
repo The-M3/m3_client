@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
         {/* Center Section - Logo */}
         <div className={styles.centerSection}>
           <div className={styles.logo}>
-            <Image src="/svgs/m3_footer_logo.svg" alt="The M3" width={130} height={130} priority />
+            <Image src="/svgs/m3_footer_logo.svg" alt="The M3" width={130} color='#DAA765' height={130} priority />
           </div>
         </div>
 
