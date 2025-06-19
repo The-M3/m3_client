@@ -71,8 +71,8 @@ const ArticleCarousel: React.FC = () => {
     setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
   };
 
-  const renderArrowIcon = () => {
-    return <svg width="42" height="24" viewBox="0 0 11 7" fill="none">
+  const renderArrowIcon = (dir?: 'left' | 'right') => {
+    return <svg width="42" style={{transform: dir === 'left' ? 'rotate(180deg)' : 'none'}} height="24" viewBox="0 0 11 7" fill="none">
     <path d="M0.242794 3.00658H8.88207L7.10574 1.23025L7.79654 0.539459L10.7571 3.5L7.79654 6.46055L7.10574 5.76975L8.88207 3.99343H0.242794V3.00658Z" fill="#DAA765" />
   </svg>
   }
@@ -106,7 +106,7 @@ const ArticleCarousel: React.FC = () => {
           disabled={currentIndex === 0}
           aria-label="Previous articles"
         >
-          {renderArrowIcon()}
+          {renderArrowIcon('left')}
         </button>
 
         <button
