@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import styles from './SponsorsSection.module.scss';
 import { Button } from '../ui';
