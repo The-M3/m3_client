@@ -6,6 +6,7 @@
   --text-color: #122016;
   --white: #fff;
   --page-maxwidth: 1280px;
+  --error: #ef4444;
 }
 
 @font-face {

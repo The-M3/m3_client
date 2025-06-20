@@ -1,0 +1,86 @@
+@import "../../styles/mixins.scss";
+
+.sponsorForm {
+    @include page;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 10rem 15rem;
+    margin-top: 10rem;
+
+    @media (max-width: 895px) {
+        padding: 5rem;
+    }
+
+    @media (max-width: 425px) {
+        padding: 2rem;
+    }
+
+    .title {
+        font-family: 'TT-variable', sans-serif;
+        font-size: 12.8rem;
+        text-align: center;
+        line-height: 12.8rem;
+
+        @media (max-width: 895px) {
+            font-size: 8rem;
+            line-height: 8rem;
+        }
+        @media (max-width: 425px) {
+            font-size: 6rem;
+            line-height: 6rem;
+        }
+    }
+
+    .description {
+        font-size: 3.2rem;
+        text-align: center;
+        @media (max-width: 895px) {
+            font-size: 3rem;
+        }
+        @media (max-width: 425px) {
+            font-size: 2rem;
+        }
+    }
+
+    .form {
+        width: 50%;
+        @media (max-width: 895px) {
+            width: 80%;
+        }
+        @media (max-width: 500px) {
+            width: 100%;
+        }
+    }
+
+    .inputField {
+        width: 100%;
+        background-color: #eae5d3;
+        padding: 1.5rem 2.8rem;
+        border: .1rem solid #c4c0b1;
+        border-radius: 0.4rem;
+    }
+
+    .fieldGroup{
+        margin-bottom: 2rem;
+    }
+
+    .submitButton {
+        font-size: 2.8rem;
+        width: 100%;
+
+    }
+
+    .errorMessage {
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        color: var(--error);
+
+    }
+
+    .error {
+        border-color: var(--error);
+
+    }
+}

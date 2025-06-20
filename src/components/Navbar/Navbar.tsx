@@ -83,7 +83,7 @@ const Navbar = () => {
         <Link href="#events" className={styles.link}>Events</Link>
         <Link href="#resources" className={styles.link}>Resources</Link>
         <Link href="#membership" className={styles.link}>Membership</Link>
-        <Link href="#sponsors" className={styles.link}>Sponsors</Link>
+        <Link href="/sponsors" className={styles.link}>Sponsors</Link>
         <Button className={styles.joinButton}>JOIN OUR COMMUNITY</Button>
       </div>
     </nav>
