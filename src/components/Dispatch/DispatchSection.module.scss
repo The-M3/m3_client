@@ -1,0 +1,73 @@
+@import "../../styles/mixins.scss";
+
+.dispatchSection {
+    @include page;
+    background-color: var(--button-color);
+    color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rem 15rem;
+    gap: 4rem;
+    margin-top: 10rem;
+    padding-bottom: 20rem;
+
+
+    @media (max-width: 895px) {
+        padding: 5rem;
+      }
+
+    .title {
+        font-family: 'TT-variable', sans-serif;
+        text-align: center;
+        font-size: 14.4rem;
+
+        @media (max-width: 895px) {
+            font-size: 8rem;
+          }
+    }
+
+    .description {
+        font-size: 2.6rem;
+        text-align: center;
+        @media (max-width: 895px) {
+            font-size: 1.8rem;
+          }
+    }
+
+    .inputContainer {
+        display: flex;
+        align-items: flex-end;
+        gap: 1.5rem;
+
+        @media (max-width: 895px) {
+            flex-direction: column;
+            align-items: center;
+          }
+
+        .input {
+            border: none;
+            border-bottom: 0.1rem solid #DAA765;
+            background: transparent;
+            font-size: 2rem;
+            padding: 1rem 0;
+            width: 40rem;
+            height: 4rem;
+
+            @media (max-width: 500px) {
+                width: 100%;
+                font-size: 1.6rem;
+              }
+        }
+
+        .btn {
+            font-size: 2.8rem;
+            padding: 1rem 3rem;
+
+            @media (max-width: 500px) {
+                width: 100%;
+                font-size: 2rem;
+              }
+        }
+    }
+}

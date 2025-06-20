@@ -6,6 +6,7 @@ import MembersSection from "../components/MembersSection";
 import SponsorsSection from "../components/SponsorsSection";
 import ArticleCarousel from "../components/ArticleCarousel";
 import Footer from "../components/Footer";
+import DispatchSection from "@/components/Dispatch";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <MembersSection />
       <ArticleCarousel />
       <SponsorsSection />
+      <DispatchSection />
       <Footer />
     </>
   );

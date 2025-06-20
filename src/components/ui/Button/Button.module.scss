@@ -1,6 +1,4 @@
 .button {
-    background-color: var(--button-color);
-    color: var(--background);
     padding: 0.728rem 1.164rem;
     border: none;
     cursor: pointer;
@@ -14,4 +12,15 @@
     &:hover {
       background-color: var(--button-hover);
     }
+
+
+  }
+  
+  .primary {
+    background-color: var(--button-color);
+    color: var(--background);
+  }
+  .secondary {
+    background-color: var(--background);
+    color: var(--button-color);
   }
