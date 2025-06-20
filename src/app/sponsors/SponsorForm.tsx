@@ -37,7 +37,9 @@ const SponsorForm: React.FC = () => {
     phoneNumber: '',
   };
 
-  const handleSubmit = (values: SponsorFormValues, { setSubmitting, resetForm }: any) => {
+  const handleSubmit = (values: SponsorFormValues, { setSubmitting, resetForm }: 
+    { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void; }
+  ) => {
     console.log('Form submitted:', values);
     
     // Simulate API call
