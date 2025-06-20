@@ -1,15 +1,18 @@
 @import "../../styles/mixins.scss";
 
-.heroSection {
+.aboutPage {
     @include page;
     margin-top: 13rem;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    @media (max-width: 950px) {
-        padding: 0 2rem;
+    // overflow: hidden;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
-    }
+    // @media (min-width: 1024px) {
+    //     padding-left: 0;
+    //     padding-right: 0;
+    //   }
 
     @media (max-width: 500px) {
         margin-top: 0;
@@ -57,4 +60,106 @@
             font-size: 2rem;
         }
     }
+
+    .whoSection{
+        display: flex;
+        // align-items: flex-start;
+        gap: 2.6rem;
+
+        @media (max-width: 1109px) {
+            flex-direction: column;
+        }
+        
+
+        .whoHeading{
+            font-size: 10.4rem;
+            font-family: 'TT-variable', sans-serif;
+            font-weight: 900;
+            line-height: 8.1rem;
+            color: var(--black);
+            flex: 1;
+            @media (max-width: 950px) {
+                font-size: 10rem;
+                line-height: 12rem;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 8rem;
+                line-height: 8rem;
+            }
+
+            @media (max-width: 500px) {
+                font-size: 6.5rem;
+            }
+        }
+
+        .whoList{
+            display: flex;  
+            flex-direction: column;
+            gap: 5rem;
+            flex: 3;
+        }
+
+        .whoItem{
+            display: flex;
+            gap: 2rem;
+            min-height: 40.2rem;
+            align-items: center;
+            background-color: var(--button-color);
+            color: var(--background);
+            border-radius: 0.4rem;
+            
+
+            &Content{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding: 5rem;
+                flex: 3;
+
+                @media (max-width: 852px) {
+                    padding: 2rem;
+                }
+            }
+
+            &Heading{
+                font-size: 6rem;
+                font-family: 'TT-variable', sans-serif;
+                font-weight: 900;
+                line-height: 8.1rem;
+                color: var(--beige);
+                @media (max-width: 852px) {
+                    font-size: 4rem;
+                    line-height: 6rem;
+                }
+            }
+
+            &Description{
+                font-size: 2.6rem;
+                // line-height: 1.5;
+                @media (max-width: 852px) {
+                    font-size: 2rem;
+                }
+            }
+           
+        }
+
+        .whoImage {
+            width: 26.9rem;
+            height: 100%;
+            flex: 1;
+            @media (max-width: 1109px) {
+                width: 100%;
+                min-height: 40.2rem;
+                flex: 1;
+            }
+
+            @media (max-width: 500px) {
+                display: none;
+            }
+        }
+
+
+    }
+
 }
