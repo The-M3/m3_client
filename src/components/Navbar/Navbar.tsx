@@ -5,9 +5,11 @@ import styles from './Navbar.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../ui';
+import { usePathname } from 'next/navigation';
 
 
 const Navbar = () => {
+  const pathName = usePathname(); 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -58,7 +60,7 @@ const Navbar = () => {
 
   return (
     <nav className={`${styles.navbar} ${!isVisible ? styles.hidden : ''}`}>
-      <div className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <Image
           src="/svgs/appIcon.svg"
           alt="The M3"
@@ -66,7 +68,7 @@ const Navbar = () => {
           height={40}
           priority
         />
-      </div>
+      </Link>
 
       <button className={styles.menuButton} onClick={toggleMenu}>
         <Image
@@ -79,11 +81,11 @@ const Navbar = () => {
       </button>
 
       <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
-        <Link href="#about" className={styles.link}>About us</Link>
-        <Link href="#events" className={styles.link}>Events</Link>
-        <Link href="#resources" className={styles.link}>Resources</Link>
-        <Link href="#membership" className={styles.link}>Membership</Link>
-        <Link href="/sponsors" className={styles.link}>Sponsors</Link>
+        <Link href="/about" className={`${styles.link} ${pathName === '/about' ? styles.active : ''}`}>About us</Link>
+        <Link href="/events" className={`${styles.link} ${pathName === '/events' ? styles.active : ''}`}>Events</Link>
+        <Link href="/resources" className={`${styles.link} ${pathName === '/resources' ? styles.active : ''}`}>Resources</Link>
+        <Link href="/membership" className={`${styles.link} ${pathName === '/membership' ? styles.active : ''}`}>Membership</Link>
+        <Link href="/sponsors" className={`${styles.link} ${pathName === '/sponsors' ? styles.active : ''}`}>Sponsors</Link>
         <Button className={styles.joinButton}>JOIN OUR COMMUNITY</Button>
       </div>
     </nav>

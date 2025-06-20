@@ -14,7 +14,7 @@
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 0.4rem;
-  border: 1px solid #DAA765;
+  border: 1px solid var(--gold);
   transition: transform 0.3s ease-in-out;
 
   &.hidden {
@@ -38,6 +38,10 @@
       }
     }
     
+    .active {
+      color: var(--button-color);
+      font-weight: 900;
+    }
     .joinButton {
       color: white;
     }
