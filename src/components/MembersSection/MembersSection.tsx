@@ -2,11 +2,11 @@ import React from 'react';
 import styles from './MembersSection.module.scss';
 
 interface Member {
-  id: string;
+  id?: string;
   name: string;
   title: string;
-  location: string;
-  quote: string;
+  location?: string;
+  quote?: string;
   imageUrl: string;
   imageAlt: string;
 }

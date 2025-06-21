@@ -242,4 +242,110 @@
         }
     }
 
+    .founderSection {
+        display: flex;
+        gap: 5rem;
+        // flex: 1;
+        margin-top: 10rem;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
+
+    }
+
+    .founderContentLeft{
+        min-width: 50rem;
+        max-width: 50rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        @media (max-width: 500px) {
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .founderContentRight{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .founderContentRightHeading {
+        font-size: 10rem;
+        font-family: 'TT-variable', sans-serif;
+        font-weight: 700;
+        line-height: 100%;
+        color: var(--black);
+
+              
+        @media (max-width: 500px) {
+            font-size: 5rem;
+        }
+    }
+
+    .founderContainer {
+        background-color: var(--background);
+        border-radius: 0.4rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 80rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: inset 0 -150px 100px rgba(0,0,0, 0.8);
+        color: var(--white);
+        width: 100%;
+        margin-bottom: 1rem;
+        @media (max-width: 500px) {
+            height: 40rem;
+        }
+    }
+
+    .founderInfo{
+        padding: 2rem;
+        margin-top: auto;
+    }
+
+    .founderName{
+        font-family: 'TT-variable', sans-serif;
+        font-size: 22rem;
+        font-weight: 700;
+        line-height: 100%; 
+        
+        @media (max-width: 500px) {
+            font-size: 11rem;
+        }
+    }
+
+    .founderTitle{
+        font-size: 3.4rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        line-height: 100%; 
+        
+        @media (max-width: 500px) {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .founderQuote {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        
+        @media (max-width: 500px) {
+            font-size: 1.6rem;
+        }
+    }
+
+    .handshakeImage {
+        position: relative;
+        width: 100%;
+        height: 70rem;
+        margin-top: 3rem;
+
+        @media (max-width: 500px) {
+            height: 40rem;
+        }
+    }
 }
