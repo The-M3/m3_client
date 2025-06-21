@@ -3,7 +3,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import styles from './sponsor.module.scss';
+import styles from './sponsorTab.module.scss';
 import { Button } from '@/components/ui';
 
 interface SponsorFormValues {
