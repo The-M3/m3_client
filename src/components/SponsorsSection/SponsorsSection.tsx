@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './SponsorsSection.module.scss';
 import { Button } from '../ui';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Sponsor {
   id: string;
@@ -89,16 +90,18 @@ const sponsorsData: Sponsor[] = [
 
 const SponsorsSection: React.FC = () => {
   return (
-    <section className={styles.sponsorsSection}>
+    <section className={styles.sponsorsSection} id="sponsors-section">
       <div className={styles.content}>
         <div className={styles.leftContent}>
           <h2 className={styles.title}>Our Sponsors</h2>
           <p className={styles.description}>
             The M3 is backed by organizations that believe in infrastructure, collaboration, and the future of African payments. Sponsoring The M3 means direct access to Africa&apos;s top CTOs, engineers, and decision-makers, plus the opportunity to lead conversations that shape the continent&apos;s fintech landscape.
           </p>
+          <Link href="/join">
           <Button className={styles.sponsorButton}>
             BECOME A SPONSOR
           </Button>
+          </Link>
         </div>
         
         <div className={styles.logosContainer}>

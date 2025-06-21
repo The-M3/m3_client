@@ -77,7 +77,7 @@ const EventsSection = () => {
     imageSrc: "/images/featureImage.png"
   }
   return (
-    <section className={styles.eventsSection}>
+    <section id="events-section" className={styles.eventsSection}>
       <h2 className={styles.title}>Upcoming Events</h2>
 
       <div className={styles.eventGrid}>
