@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './about.module.scss';
 import Image from 'next/image';
 
-const Content = () => {
+const AboutUs = () => {
   return (
     <section className={styles.aboutPage}>
       <div className={styles.aboutTopSection}>
@@ -71,4 +71,4 @@ const Content = () => {
   )
 }
 
-export default Content;
+export default AboutUs;

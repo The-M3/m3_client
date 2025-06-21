@@ -91,8 +91,9 @@
                 line-height: 8rem;
             }
 
-            @media (max-width: 500px) {
-                font-size: 6.5rem;
+            @media (max-width: 400px) {
+                font-size: 4.5rem;
+                line-height: 100%;
             }
         }
 
@@ -112,6 +113,9 @@
             color: var(--background);
             border-radius: 0.4rem;
             
+            @media (max-width: 400px) {
+                min-height: auto;
+            }
 
             &Content{
                 display: flex;
@@ -121,8 +125,10 @@
                 flex: 3;
 
                 @media (max-width: 852px) {
-                    padding: 2rem;
+                    padding: 3rem 2rem;
                 }
+
+              
             }
 
             &Heading{
@@ -135,6 +141,10 @@
                     font-size: 4rem;
                     line-height: 6rem;
                 }
+                @media (max-width: 400px) {
+                    font-size: 3.5rem;
+                    line-height: 100%;
+                }
             }
 
             &Description{
@@ -142,6 +152,11 @@
                 // line-height: 1.5;
                 @media (max-width: 852px) {
                     font-size: 2rem;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 1.6rem;
+                    line-height: 2.5rem;
                 }
             }
            
