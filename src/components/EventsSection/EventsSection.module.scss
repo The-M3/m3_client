@@ -12,12 +12,18 @@
     font-size: 6rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 6rem;
     color: #DAA765;
 
     @media (min-width: 768px) {
       font-size: 8rem;
     }
+  }
+
+  .subTitle{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 6rem;
+    color: var(--background);
   }
 
   .eventGrid {

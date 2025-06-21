@@ -112,10 +112,9 @@ const ArticleCarousel: React.FC = () => {
   return (
     <section className={styles.articleCarousel} ref={carouselRef} style={{marginLeft: eventsLeftOffset}}>
       <div className={styles.articleHeader}>
-        <h2 className={styles.articleTitle}>From Across The M3</h2>
+        <h2 className={styles.articleTitle}>Inside Africa’s Fintech Engine</h2>
         <p className={styles.articleSubtitle}>
-        An evolving stream of ideas, hard-earned lessons, and practical insights. From infrastructure deep dives to real-world implementation stories, this is where The M3 shares what actually works.
-        </p>
+        Explore stories, strategies, and technical deep-dives from the forefront of African payment systems, API innovation, and fintech infrastructure. The M3 Blog features practical knowledge from the people building, scaling, and securing the future of digital finance across Africa.        </p>
       </div>
       <div className={styles.carouselContainer}>
         <div

@@ -7,9 +7,10 @@ type FeatureCardProps = {
   iconSrc: string;
   title: string;
   description: string;
+  altText: string;
 };
 
-const FeatureCard = ({ number, iconSrc, title, description }: FeatureCardProps) => {
+const FeatureCard = ({ number, iconSrc, title, description, altText }: FeatureCardProps) => {
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureCardTop}>
@@ -17,7 +18,7 @@ const FeatureCard = ({ number, iconSrc, title, description }: FeatureCardProps) 
         <div className={styles.featureIcon}>
           <Image
             src={iconSrc}
-            alt={title}
+            alt={altText}
             width={80}
             height={80}
             priority
@@ -34,31 +35,34 @@ const FeatureCard = ({ number, iconSrc, title, description }: FeatureCardProps) 
 const FeaturesSection = () => {
   const features = [
     {
+      altText: 'Illustration of mobile interface with stacked coins and microchip',
       number: 1,
       iconSrc: '/svgs/technical-depth.svg',
-      title: 'Technical Depth',
-      description: 'Gain access to deep technical resources, implementation guides, and peer-reviewed solutions across Africa\'s payments ecosystem.'
+      title: 'Deep Technical Insights',
+      description: 'Unlock peer-reviewed payment architecture solutions, implementation guides, and developer toolkits tailored to the realities of African payment systems, API design, and secure transaction flows.'
     },
     {
+      altText: 'Illustration of person with settings icon and document',
       number: 2,
       iconSrc: '/svgs/insider-access.svg',
-      title: 'Insider Access',
-      description: 'Get early insights from regulators, infrastructure leaders, and fintech trailblazers shaping the future of African payments.'
+      title: 'Industry Insider Access',
+      description: 'Gain rare visibility into the inner workings of Africa’s fintech infrastructure. Learn directly from regulators, payment system architects, and technical leaders behind the continent’s most scalable digital finance solutions.',
     },
     {
+      altText: 'Illustration of African map with location pins',
       number: 3,
       iconSrc: '/svgs/pan-african.svg',
       title: 'Pan-African Network',
-      description: 'Connect with peers, partners, and thought leaders from Lagos to Nairobi, Cairo to Cape Town driving fintech forward across borders.'
+      description: 'Build high-signal connections with the innovators, specialists, and investors powering interoperability, cross-border payments, and financial infrastructure innovation in 20+ African markets.',
     }
   ];
 
   return (
     <section className={styles.featuresSection}>
-        <h2 className={styles.heading}>For the Builders of African Fintech</h2>
+        <h2 className={styles.heading}>Join the Community of Innovators Behind Africa’s Leading Payment Solutions</h2>
         <p className={styles.subheading}>
-          A trusted, continent-wide ecosystem built by insiders, for innovators, where technical expertise, strategic access, and community converge to shape the future of African fintech.
-        </p>
+        Be part of the trusted network advancing African payment systems, driving scalable fintech infrastructure and shaping the future of cross-border payments. The M3 community is where experts in payment architecture, secure transaction design, and digital finance in Africa come together to build real-world solutions and lead meaningful fintech collaboration across the continent.
+</p>
         <div className={styles.featuresGrid}>
           {features.map((feature, index) => (
             <FeatureCard
@@ -67,6 +71,7 @@ const FeaturesSection = () => {
               iconSrc={feature.iconSrc}
               title={feature.title}
               description={feature.description}
+              altText={feature.altText}
             />
           ))}
         </div>

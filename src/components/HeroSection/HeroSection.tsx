@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section className={styles.heroSection}>
       <h1 className={styles.heading}>
-        Community of Africa&apos;s Technologists Building the Future of Payment
+      The Premier Network Advancing African Payment Systems and Fintech Infrastructure
       </h1>
       <div className={styles.descriptionContainer}>
         <div className={styles.imageContainer}>
@@ -15,7 +15,7 @@ const HeroSection = () => {
           <div className={styles.heroImage}>
             <Image
               src="/images/heroImage.png"
-              alt="A group of African professionals looking at a laptop"
+              alt="Four professionally dressed African professionals—two men and two women—smiling and gathered around a laptop, engaged in a collaborative discussion."
               fill
               style={{ objectFit: 'cover' }}
               priority
@@ -24,7 +24,7 @@ const HeroSection = () => {
         </div>
         <div className={styles.description}>
           <p>
-            At The M3, we&apos;re uniting the brightest minds building Africa&apos;s payment systems from infrastructure engineers to fintech founders.
+          The M3 is the pan-African community where payment engineers, product leaders, and infrastructure specialists collaborate to shape the future of digital finance in Africa. Gain exclusive access to deep technical insights, real-world implementation playbooks, and the innovators building the next generation of Africa’s financial infrastructure.
           </p>
           <Button>
             JOIN OUR COMMUNITY

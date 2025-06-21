@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './MembersSection.module.scss';
+import styles from './Testimonials.module.scss';
 
-interface Member {
+interface Testimonial {
   id?: string;
   name: string;
   title: string;
@@ -11,7 +11,7 @@ interface Member {
   imageAlt: string;
 }
 
-const membersData: Member[] = [
+const testimonialsData: Testimonial[] = [
   {
     id: '1',
     name: 'James A.',
@@ -68,7 +68,7 @@ const membersData: Member[] = [
   }
 ];
 
-const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
+const TestimonialCard: React.FC<{ member: Testimonial }> = ({ member }) => {
   return (
     <div className={styles.memberCard} style={{ backgroundImage: `url(${member.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
       <div className={styles.memberInfo}>
@@ -82,24 +82,23 @@ const MemberCard: React.FC<{ member: Member }> = ({ member }) => {
   );
 };
 
-const MembersSection: React.FC = () => {
+const TestimonialsSection: React.FC = () => {
   return (
     <section className={styles.membersSection}>
         <div className={styles.header}>
-          <h2 className={styles.title}>For Builders by Builders</h2>
+          <h2 className={styles.title}>What The M3 Members Are Saying</h2>
           <p className={styles.subtitle}>
-            A spotlight on standout members of The M3, sharing what the community 
-            means to them and their role in shaping Africa&apos;s payment future.
+          Hear directly from Africa&apos;s payment infrastructure leaders on how The M3 has sharpened their technical expertise, expanded their professional networks, and unlocked tangible opportunities across the continent&apos;s fintech ecosystem.
           </p>
         </div>
         
         <div className={styles.membersGrid}>
-          {membersData.map((member) => (
-            <MemberCard key={member.id} member={member} />
+          {testimonialsData.map((member) => (
+            <TestimonialCard key={member.id} member={member} />
           ))}
         </div>
     </section>
   );
 };
 
-export default MembersSection;
+export default TestimonialsSection;

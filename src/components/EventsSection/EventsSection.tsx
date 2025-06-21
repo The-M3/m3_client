@@ -12,6 +12,7 @@ type FeaturedEventProps = {
   description: string;
   speakers: string;
   imageSrc: string;
+  altText?: string;
 };
 
 const FeaturedEvent = ({
@@ -20,7 +21,8 @@ const FeaturedEvent = ({
   date,
   description,
   speakers,
-  imageSrc
+  imageSrc,
+  altText
 }: FeaturedEventProps) => {
   const formattedDate = dayjs(date).format('MMMM D, YYYY — h:mm A  [WAT]')
 
@@ -72,13 +74,17 @@ const EventsSection = () => {
     title: "Securing Africa's Digital Wallets",
     location: "Lagos, Nigeria",
     date: "2025-06-22T16:00:00",
-    description: "Discover the critical security strategies fintech leaders are using to protect digital wallets across the continent. Adaobi will share real-world breach case studies, encryption standards, and how to stay compliant in a shifting regulatory landscape.Discover the critical security strategies fintech Discover the critical security strategies fintech Discover the critical security strategies fintech",
+    description: "Join the Chief Security Officer at PaySecure Africa, Adaobi Okonkwo, for an essential session on protecting Africa’s rapidly growing digital wallet ecosystem. Our speaker will explore real-world data breach incidents, modern encryption practices, and how to remain compliant amid evolving regulatory demands.",
     speakers: "John Doe, Jane Smith",
-    imageSrc: "/images/featureImage.png"
+    imageSrc: "/images/featureImage.png",
+    altText: "A conference room filled with seated attendees facing a stage where a speaker presents"
   }
   return (
     <section id="events-section" className={styles.eventsSection}>
-      <h2 className={styles.title}>Upcoming Events</h2>
+      <h2 className={styles.title}>Explore What’s Ahead in the M3 Community</h2>
+      <p className={styles.subTitle}>
+      Our hybrid events blend expert-led virtual sessions with select in-person gatherings across key regions in Africa. Check the lineup and secure your spot for high-impact strategic roundtables, live innovation showcases, and pan-African connections.
+      </p>
 
       <div className={styles.eventGrid}>
         <FeaturedEvent
