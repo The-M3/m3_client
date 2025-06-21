@@ -332,10 +332,6 @@
     .founderQuote {
         font-size: 2rem;
         line-height: 2.5rem;
-        
-        @media (max-width: 500px) {
-            font-size: 1.6rem;
-        }
     }
 
     .handshakeImage {

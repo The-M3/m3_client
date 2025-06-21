@@ -13,11 +13,64 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// export const metadata: Metadata = {
+//   title: "The M3 Community",
+//   description: "The M3 Community connects Africa’s payments engineers, fintech leaders, and infrastructure investors. Explore deep technical insights, regional collaboration, and the future of scalable financial systems",
+//   icons: {
+//     icon: '/svgs/appIcon.svg',
+//   },
+// };
+
 export const metadata: Metadata = {
-  title: "The M3 Community",
-  description: "The M3 Community connects Africa’s payments engineers, fintech leaders, and infrastructure investors. Explore deep technical insights, regional collaboration, and the future of scalable financial systems",
+  metadataBase: new URL('https://your-domain.com'),
+  title: {
+    default: 'The M3 Community - Africa\'s Payment Technology Network',
+    template: '%s | The M3 Community'
+  },
+  // title: "The M3 Community",
   icons: {
     icon: '/svgs/appIcon.svg',
+  },
+  description: 'The M3 Community is a pan-African network of payment technologists, fintech founders, investors, and infrastructure professionals working to build Africa\'s next-generation payment systems.',
+  keywords: ['fintech', 'payments', 'africa', 'technology', 'blockchain', 'digital payments'],
+  authors: [{ name: 'The M3 Community' }],
+  creator: 'The M3 Community',
+  publisher: 'The M3 Community',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://your-domain.com',
+    siteName: 'The M3 Community',
+    title: 'The M3 Community - Africa\'s Payment Technology Network',
+    description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
+    images: [
+      {
+        url: '/svgs/appIcon.svg',
+        width: 1200,
+        height: 630,
+        alt: 'The M3 Community',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@TheM3',
+    creator: '@TheM3',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code',
+    yandex: 'your-yandex-verification-code',
   },
 };
 
