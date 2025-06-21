@@ -22,7 +22,6 @@ const FeaturedEvent = ({
   description,
   speakers,
   imageSrc,
-  altText
 }: FeaturedEventProps) => {
   const formattedDate = dayjs(date).format('MMMM D, YYYY — h:mm A  [WAT]')
 
