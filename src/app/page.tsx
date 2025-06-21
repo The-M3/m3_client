@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar/Navbar";
 import HeroSection from "../components/HeroSection/HeroSection";
 import FeaturesSection from "../components/FeaturesSection";
 import EventsSection from "../components/EventsSection";
-import MembersSection from "../components/Testimonials";
+import Testimonials from "../components/Testimonials";
 import SponsorsSection from "../components/SponsorsSection";
 import ArticleCarousel from "../components/ArticleCarousel";
 import Footer from "../components/Footer";
@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <EventsSection />
-      <MembersSection />
+      <Testimonials />
       <ArticleCarousel />
       <SponsorsSection />
       <DispatchSection />

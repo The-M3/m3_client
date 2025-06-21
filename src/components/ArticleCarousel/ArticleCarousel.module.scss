@@ -26,8 +26,8 @@
 
   }
   
-  @media (min-width: 1024px) {
-    padding: 0;
+  @media (max-width: 1024px) {
+    padding-left: 2rem;
   }
 
   .articleHeader {
