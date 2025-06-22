@@ -1,10 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import styles from './sponsorTab.module.scss';
 import { Button } from '@/components/ui';
+import supabase from '@/supabase-client';
 
 interface SponsorFormValues {
   fullName: string;
@@ -37,18 +38,40 @@ const SponsorForm: React.FC = () => {
     phoneNumber: '',
   };
 
-  const handleSubmit = (values: SponsorFormValues, { setSubmitting, resetForm }: 
+  const handleSubmit =  async (values: SponsorFormValues, { setSubmitting, resetForm }: 
     { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void; }
   ) => {
-    console.log('Form submitted:', values);
+
+    try {
+      const res = await supabase.from('sponsors').insert({
+        name: values.fullName,
+        email: values.email,
+        company: values.companyName,
+        phone: values.phoneNumber,
+      }).single();
+
+      console.log('Insert response:', res);
+    } catch (error) {
+      console.error('Error inserting sponsor:', error);
+    }
+
     
     // Simulate API call
     setTimeout(() => {
-      alert('Thank you for your interest in sponsoring The M3! We will get back to you soon.');
       resetForm();
       setSubmitting(false);
     }, 1000);
   };
+
+  useEffect(() => {
+
+    const fetchSponsors = async () => {
+      const { data, error } = await supabase.from('sponsors').select('*');
+      console.log('Sponsors data:', data);
+      console.log('Sponsors error:', error);
+    };
+    fetchSponsors();
+  }, []);
 
   return (
     <div className={styles.sponsorForm}>
