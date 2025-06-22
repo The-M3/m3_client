@@ -12,6 +12,10 @@
     margin-top: 10rem;
     padding-bottom: 20rem;
 
+    @media (min-width: 1025px) {
+      padding: 10rem 15rem;
+    }
+
 
     @media (max-width: 895px) {
         padding: 5rem;
@@ -53,6 +57,7 @@
             padding: 1rem 0;
             width: 40rem;
             height: 4rem;
+            color: var(--background);
 
             &::placeholder {
                 color: #939e96;
