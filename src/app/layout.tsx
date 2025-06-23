@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     default: 'The M3 Community - Africa\'s Payment Technology Network',
     template: '%s | The M3 Community'
   },
-  // title: "The M3 Community",
   icons: {
     icon: '/svgs/appIcon.svg',
   },
@@ -45,15 +44,18 @@ export const metadata: Metadata = {
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
     images: [
       {
-        url: '/svgs/appIcon.svg',
+        url: '/AppLogo.png',
         width: 1200,
         height: 630,
-        alt: 'The M3 Community',
+        alt: 'The M3 Community Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'The M3 Community - Africa\'s Payment Technology Network',
+    description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
+    images: ['/AppLogo.png'],
     site: '@TheM3',
     creator: '@TheM3',
   },
