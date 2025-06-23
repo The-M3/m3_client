@@ -97,9 +97,9 @@ const Navbar = () => {
         <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('events-section')}>Events</button>
         {/* <Link href="/resources" className={`${styles.link} ${pathName === '/resources' ? styles.active : ''}`}>Resources</Link>
         <Link href="/membership" className={`${styles.link} ${pathName === '/membership' ? styles.active : ''}`}>Membership</Link> */}
-        <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('sponsors-section')}>Sponsors</button>
+        {/* <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('sponsors-section')}>Sponsors</button> */}
 
-        {/* <Link href="/sponsors" className={`${styles.link} ${pathName === '/sponsors' ? styles.active : ''}`}>Sponsors</Link> */}
+        <Link href="/join" className={`${styles.link} ${pathName === '/join' ? styles.active : ''}`}>Sponsors</Link>
         <Link href="/join">
         <Button className={styles.joinButton}>JOIN OUR COMMUNITY</Button>
         </Link>
