@@ -13,16 +13,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "The M3 Community",
-//   description: "The M3 Community connects Africa’s payments engineers, fintech leaders, and infrastructure investors. Explore deep technical insights, regional collaboration, and the future of scalable financial systems",
-//   icons: {
-//     icon: '/svgs/appIcon.svg',
-//   },
-// };
-
 export const metadata: Metadata = {
-  metadataBase: new URL('https://your-domain.com'),
+  metadataBase: new URL('https://the-m3-community.netlify.app'),
   title: {
     default: 'The M3 Community - Africa\'s Payment Technology Network',
     template: '%s | The M3 Community'
@@ -38,13 +30,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.com',
+    url: 'https://the-m3-community.netlify.app',
     siteName: 'The M3 Community',
     title: 'The M3 Community - Africa\'s Payment Technology Network',
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
     images: [
       {
-        url: '/AppLogo.png',
+        url: '/images/AppLogo.png',
         width: 1200,
         height: 630,
         alt: 'The M3 Community Logo',
