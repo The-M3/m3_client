@@ -3,23 +3,12 @@
 import React from 'react'
 import styles from './DispatchSection.module.scss'
 import { Button } from '../ui'
-import supabase from '@/supabase-client';
 
 const DispatchSection = () => {
   const [email, setEmail] = React.useState('');
 
   const handlSendDelivery = async () => {
     console.log(email);
-    try {
-      const res = await supabase.auth.signUp({
-        email: email,
-        password: 'password123'
-      })
-
-      console.log('Insert response:', res);
-    } catch (error) {
-      console.error('Error inserting dispatch:', error);
-    }
   }
   
   return (
