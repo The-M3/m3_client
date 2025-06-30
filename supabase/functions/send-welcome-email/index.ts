@@ -1,4 +1,3 @@
-// // @ts-ignore
 // import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 
 // const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
@@ -26,7 +25,7 @@
 //         'Content-Type': 'application/json',
 //       },
 //       body: JSON.stringify({
-//         from: 'The M3 Community <onboarding@the-m3-community.netlify.app>',
+//         from: 'The M3 Community <noreply@the-m3-community.netlify.app>',
 //         to: [record.email],
 //         subject: 'Welcome to The M3 Community!',
 //         html: `
