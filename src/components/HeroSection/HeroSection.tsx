@@ -14,7 +14,7 @@ const HeroSection = () => {
           {/* Using a placeholder for the hero image */}
           <div className={styles.heroImage}>
             <Image
-              src="/images/heroImage.png"
+              src="/images/heroImage2.jpeg"
               alt="Four professionally dressed African professionals—two men and two women—smiling and gathered around a laptop, engaged in a collaborative discussion."
               fill
               style={{ objectFit: 'cover' }}
