@@ -12,9 +12,11 @@
     "@supabase/supabase-js": "^2.50.0",
     "dayjs": "^1.11.13",
     "formik": "^2.4.6",
+    "ldrs": "^1.1.7",
     "next": "15.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.5",
     "sass": "^1.89.2",
     "yup": "^1.6.1"
   },

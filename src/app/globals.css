@@ -64,6 +64,10 @@ a {
   text-decoration: none;
 }
 
+.Toastify__toast {
+  font-size: 16px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

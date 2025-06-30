@@ -1,53 +1,71 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import styles from './sponsorTab.module.scss';
 import { Button } from '@/components/ui';
+import supabase from '@/supabase-client';
+
 
 interface SponsorFormValues {
-  fullName: string;
+  fullname: string;
   email: string;
-  companyName: string;
-  phoneNumber: string;
+  company: string;
+  phone: string;
 }
 
 const validationSchema = Yup.object({
-  fullName: Yup.string()
+  fullname: Yup.string()
     .min(2, 'Full name must be at least 2 characters')
     .required('Full name is required'),
   email: Yup.string()
     .email('Invalid email address')
     .required('Email address is required'),
-  companyName: Yup.string()
+  company: Yup.string()
     .min(2, 'Company name must be at least 2 characters')
     .required('Company/Business name is required'),
-  phoneNumber: Yup.string()
+  phone: Yup.string()
     .matches(/^[+]?[\d\s\-\(\)]+$/, 'Invalid phone number format')
     .min(10, 'Phone number must be at least 10 digits')
     .required('Phone number is required'),
 });
 
+const errorCodes: Record<string, string> = {
+  "23505": "Email already registered"
+}
+
 const SponsorForm: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const initialValues: SponsorFormValues = {
-    fullName: '',
+    fullname: '',
     email: '',
-    companyName: '',
-    phoneNumber: '',
+    company: '',
+    phone: '',
   };
 
-  const handleSubmit =  async (values: SponsorFormValues, { setSubmitting, resetForm }: 
-    { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void; }
-  ) => {
-    // Simulate API call
-    setTimeout(() => {
-      resetForm();
-      setSubmitting(false);
-    }, 1000);
+  const handleSubmit = async (values: SponsorFormValues) => {
+    setIsLoading(true);
+    try {
+      const {error} = await supabase.from("sponsors").insert(values).single()
+      if (error) {
+        console.error(error)
+        toast.error(`${errorCodes[error.code] || 'Something went wrong!'}`);
+      } else {
+        toast.success("Thank you!");
+      }
+    } catch (error) {
+      console.error(error)
+      toast.error("Something went wrong!");
+    }
+    setIsLoading(false);
   };
 
   return (
+    <>
+    <ToastContainer />
     <div className={styles.sponsorForm}>
       <h2 className={styles.title}>We’re happy to have you Sponsor The M3</h2>
       <p className={styles.description}>
@@ -58,16 +76,17 @@ const SponsorForm: React.FC = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting, errors, touched }) => (
+        {({ errors, touched }) =>{ 
+          return (
           <Form className={styles.form}>
             <div className={styles.fieldGroup}>
               <Field
                 type="text"
-                name="fullName"
+                name="fullname"
                 placeholder="Full name"
-                className={`${styles.inputField} ${errors.fullName && touched.fullName ? styles.error : ''}`}
+                className={`${styles.inputField} ${errors.fullname && touched.fullname ? styles.error : ''}`}
               />
-              <ErrorMessage name="fullName" component="div" className={styles.errorMessage} />
+              <ErrorMessage name="fullname" component="div" className={styles.errorMessage} />
             </div>
 
             <div className={styles.fieldGroup}>
@@ -83,32 +102,36 @@ const SponsorForm: React.FC = () => {
             <div className={styles.fieldGroup}>
               <Field
                 type="text"
-                name="companyName"
+                name="company"
                 placeholder="Company / Business name"
-                className={`${styles.inputField} ${errors.companyName && touched.companyName ? styles.error : ''}`}
+                className={`${styles.inputField} ${errors.company && touched.company ? styles.error : ''}`}
               />
-              <ErrorMessage name="companyName" component="div" className={styles.errorMessage} />
+              <ErrorMessage name="company" component="div" className={styles.errorMessage} />
             </div>
 
             <div className={styles.fieldGroup}>
               <Field
                 type="tel"
-                name="phoneNumber"
+                name="phone"
                 placeholder="Phone number"
-                className={`${styles.inputField} ${errors.phoneNumber && touched.phoneNumber ? styles.error : ''}`}
+                className={`${styles.inputField} ${errors.phone && touched.phone ? styles.error : ''}`}
               />
-              <ErrorMessage name="phoneNumber" component="div" className={styles.errorMessage} />
+              <ErrorMessage name="phone" component="div" className={styles.errorMessage} />
             </div>
 
             <Button
+              type="submit"
               className={styles.submitButton}
+              disabled={isLoading}
+              isLoading={isLoading}
             >
-              {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
+              SUBMIT
             </Button>
           </Form>
-        )}
+        )}}
       </Formik>
     </div>
+    </>
   );
 };
 
