@@ -34,7 +34,7 @@ const validationSchema = Yup.object({
 });
 
 const errorCodes: Record<string, string> = {
-  "23505": "Email already registered"
+  "23505": "Email/Phone already registered"
 }
 
 const SponsorForm: React.FC = () => {
