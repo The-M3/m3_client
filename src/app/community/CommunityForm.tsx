@@ -21,8 +21,8 @@ interface CommunityFormValues {
   primaryFocus: string;
   value: string;
   whyJoin: string;
-  projectLed: string;
-  openToSpeak: string;
+  project: string;
+  openToSpeak: boolean;
 }
 
 const validationSchema = Yup.object({
@@ -45,19 +45,24 @@ const validationSchema = Yup.object({
     .required('Value is required'),
   whyJoin: Yup.string()
     .required('Why join is required'),
-  projectLed: Yup.string()
-    .required('Project led is required'),
-  openToSpeak: Yup.string()
+  project: Yup.string()
+    .required('Project is required'),
+  openToSpeak: Yup.boolean()
     .required('Open to speak is required'),
 });
 
-const errorCodes: Record<string, string> = {
-  "23505": "Email/Phone already registered"
-}
+export const Msg = ({ data }: { data: { title: string; text: string } }) => {
+  return (
+    <div className="msg-container">
+      <p className="msg-title">{data.title}</p>
+      <code style={{ fontSize: "1rem" }}>{data.text}</code>
+    </div>
+  );
+};
+
 
 const CommunityForm: React.FC = () => {
   const countries = useMemo(() => countryList().getData(), [])
-  console.log('countries', countries)
   const [isLoading, setIsLoading] = useState(false);
   const initialValues: CommunityFormValues = {
     fullname: '',
@@ -68,24 +73,26 @@ const CommunityForm: React.FC = () => {
     primaryFocus: '',
     value: '',
     whyJoin: '',
-    projectLed: '',
-    openToSpeak: '',
+    project: '',
+    openToSpeak: false ,
     };
+
+
 
   const handleSubmit = async (values: CommunityFormValues) => {
     setIsLoading(true);
     try {
-      const { error } = await supabase.from("community").insert(values).single()
+      const { error } = await supabase.from("communityMembers").insert(values).single()
       if (error) {
         console.error(error)
-        toast.error(`${errorCodes[error.code] || 'Something went wrong!'}`);
+        toast.error(Msg({ data: { title: "Something went wrong!", text: error.message } }));
       } else {
         toast.success("Thank you!");
 
       }
     } catch (error) {
       console.error(error)
-      toast.error("Something went wrong!");
+      toast.error(Msg({ data: { title: "Error", text: "Something went wrong!" } }));
     }
     setIsLoading(false);
   };
@@ -192,26 +199,23 @@ const CommunityForm: React.FC = () => {
                   <ErrorMessage name="whyJoin" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label htmlFor="projectLed">⁠Share one significant payment industry achievement or project you've led
+                  <label htmlFor="project">⁠Share one significant payment industry achievement or project you&apos;ve led
                   </label>
                   <Field
                     type="text"
-                    name="projectLed"
+                    name="project"
                     placeholder="Enter here..."
-                    className={`${styles.inputField} ${errors.projectLed && touched.projectLed ? styles.error : ''}`}
+                    className={`${styles.inputField} ${errors.project && touched.project ? styles.error : ''}`}
                   />
-                  <ErrorMessage name="projectLed" component="div" className={styles.errorMessage} />
+                  <ErrorMessage name="project" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
                   <label htmlFor="value">⁠Would you be open to speaking at any of our community events?
                   </label>
-                  <Field
-                    type="text"
-                    name="projectLed"
-                    placeholder="Yes/No"
-                    className={`${styles.inputField} ${errors.projectLed && touched.projectLed ? styles.error : ''}`}
-                  />
-                  <ErrorMessage name="projectLed" component="div" className={styles.errorMessage} />
+                  <div className={styles.btnGroup}>
+                    <button type="button" onClick={() => setFieldValue("openToSpeak", true)} className={`${styles.btnOption} ${values.openToSpeak === true ? styles.btnOptionSelected : ""}`}>Yes</button>
+                    <button type="button" onClick={() => setFieldValue("openToSpeak", false)} className={`${styles.btnOption} ${values.openToSpeak === false ? styles.btnOptionSelected : ""}`}>No</button>
+                  </div>
                 </div>
 
                 <Button

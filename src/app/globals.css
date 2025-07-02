@@ -75,6 +75,7 @@ a {
   border: none;
   padding: 1.5rem 2.8rem;
   padding-left: 1rem;
+  color: var(--text-color);
 }
 
 .PhoneInput {
