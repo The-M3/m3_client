@@ -10,6 +10,7 @@ import { Button } from '@/components/ui';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import supabase from '@/supabase-client';
+import { Msg } from '../community/CommunityForm';
 
 interface SponsorFormValues {
   fullname: string;
@@ -34,9 +35,7 @@ const validationSchema = Yup.object({
     .required('Phone number is required'),
 });
 
-const errorCodes: Record<string, string> = {
-  "23505": "Email/Phone already registered"
-}
+
 
 const SponsorForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -53,7 +52,7 @@ const SponsorForm: React.FC = () => {
       const {error} = await supabase.from("sponsors").insert(values).single()
       if (error) {
         console.error(error)
-        toast.error(`${errorCodes[error.code] || 'Something went wrong!'}`);
+        toast.error(Msg({ data: { title: "Something went wrong!", text: error.message } }));
       } else {
         toast.success("Thank you!");
 
@@ -114,7 +113,7 @@ const SponsorForm: React.FC = () => {
             <div className={styles.fieldGroup}>
                   <PhoneInput
                     placeholder="Enter phone number"
-                    style={{width: '100%', background: 'transparent'}}
+                    style={{width: '100%', background: 'transparent', color: '#000'}}
                     value={values.phone}
                     onChange={(value) => setFieldValue('phone', value)} />
                   <ErrorMessage name="phone" component="div" className={styles.errorMessage} />

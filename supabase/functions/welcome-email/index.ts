@@ -1,4 +1,4 @@
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY_2')
+const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
 Deno.serve(async (req: Request) => {
   const { record } = await req.json()
