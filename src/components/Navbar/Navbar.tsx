@@ -100,7 +100,7 @@ const Navbar = () => {
         {/* <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('sponsors-section')}>Sponsors</button> */}
 
         <Link href="/join" className={`${styles.link} ${pathName === '/join' ? styles.active : ''}`}>Sponsors</Link>
-        <Link href="/join">
+        <Link href="/community">
         <Button className={styles.joinButton}>JOIN OUR COMMUNITY</Button>
         </Link>
       </div>

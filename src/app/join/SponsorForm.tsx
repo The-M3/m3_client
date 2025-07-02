@@ -7,8 +7,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import styles from './sponsorTab.module.scss';
 import { Button } from '@/components/ui';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 import supabase from '@/supabase-client';
-
 
 interface SponsorFormValues {
   fullname: string;
@@ -55,6 +56,7 @@ const SponsorForm: React.FC = () => {
         toast.error(`${errorCodes[error.code] || 'Something went wrong!'}`);
       } else {
         toast.success("Thank you!");
+
       }
     } catch (error) {
       console.error(error)
@@ -76,7 +78,7 @@ const SponsorForm: React.FC = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched }) =>{ 
+        {({ errors, touched , values, setFieldValue }) =>{ 
           return (
           <Form className={styles.form}>
             <div className={styles.fieldGroup}>
@@ -110,14 +112,13 @@ const SponsorForm: React.FC = () => {
             </div>
 
             <div className={styles.fieldGroup}>
-              <Field
-                type="tel"
-                name="phone"
-                placeholder="Phone number"
-                className={`${styles.inputField} ${errors.phone && touched.phone ? styles.error : ''}`}
-              />
-              <ErrorMessage name="phone" component="div" className={styles.errorMessage} />
-            </div>
+                  <PhoneInput
+                    placeholder="Enter phone number"
+                    style={{width: '100%', background: 'transparent'}}
+                    value={values.phone}
+                    onChange={(value) => setFieldValue('phone', value)} />
+                  <ErrorMessage name="phone" component="div" className={styles.errorMessage} />
+                </div>
 
             <Button
               type="submit"

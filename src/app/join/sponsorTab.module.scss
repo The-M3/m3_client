@@ -61,10 +61,16 @@
         border: .1rem solid #c4c0b1;
         border-radius: 0.4rem;
         color: var(--text-color);
+        font-size: 1.6rem;
     }
 
     .fieldGroup{
         margin-bottom: 2rem;
+        label {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
     }
 
     .submitButton {
@@ -84,4 +90,49 @@
         border-color: var(--error);
 
     }
+
+     .communityPerks {
+        width: 50%;
+        text-align: center;
+        margin: 4rem 0;
+
+            h2 {
+                font-size: 4rem;
+                @media (max-width: 895px) {
+                    font-size: 3.5rem;
+                }
+                @media (max-width: 425px) {
+                    font-size: 2.5rem;
+                }
+            }
+            p {
+                font-size: 3rem;
+            }
+            ul {
+                font-size: 2rem;
+                margin: 2rem 0;
+                list-style-type: none;
+            }
+            li {
+                margin: .7rem 0;
+            }
+        }
+
+        .countryList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .countryItem {
+            padding: 1rem 2rem;
+            background-color: var(--button-color);
+            border-radius: 3rem;
+            color: var(--white);
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+
 }
+
