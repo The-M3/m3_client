@@ -68,6 +68,36 @@ a {
   font-size: 16px;
 }
 
+.PhoneInputInput {
+	flex: 1;
+	min-width: 0;
+  background-color: #eae5d3;
+  border: none;
+  padding: 1.5rem 2.8rem;
+  padding-left: 1rem;
+}
+
+.PhoneInput {
+	display: flex;
+	align-items: center;
+  border: .1rem solid #c4c0b1;
+  border-radius: 0.4rem;
+  overflow: hidden;
+
+}
+
+.PhoneInputCountry {
+  padding-left: 2rem;
+  padding-right: 1rem;
+  background-color: #eae5d3;
+  margin: 0;
+}
+
+
+
+
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

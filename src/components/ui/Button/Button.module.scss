@@ -8,11 +8,6 @@
     font-family: 'TT-variable', sans-serif;
     border-radius: 0.22rem;
 
-    
-    &:hover:not(:disabled) {
-      background-color: var(--button-hover);
-    }
-
     &:disabled {
       opacity: 0.6;
       cursor: not-allowed;
@@ -23,12 +18,15 @@
   .primary {
     background-color: var(--button-color);
     color: var(--background);
+    &:hover:not(:disabled) {
+      background-color: var(--button-hover);
+    }
   }
+
   .secondary {
     background-color: var(--background);
     color: var(--button-color);
-       
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--gold);
     }
   }
