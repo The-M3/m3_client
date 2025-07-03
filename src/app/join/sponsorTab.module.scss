@@ -95,6 +95,12 @@
         width: 50%;
         text-align: center;
         margin: 4rem 0;
+        @media (max-width: 895px) {
+            width: 80%;
+        }
+        @media (max-width: 500px) {
+            width: 100%;
+        }
 
             h2 {
                 font-size: 4rem;
