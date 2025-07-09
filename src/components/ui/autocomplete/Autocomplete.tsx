@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from './autocomplete.module.scss'
 
 type Suggestion = {value: string, label: string}
@@ -7,9 +7,10 @@ interface AutocompleteProps {
     suggestions: Array<Suggestion>;
     onChange: (value: Suggestion) => void;
     name?: string;
+    placeholder?: string;
 }
 
-export const Autocomplete = ({ suggestions, onChange, name }: AutocompleteProps) => {
+export const Autocomplete = ({ suggestions, onChange, name, placeholder = "Search..." }: AutocompleteProps) => {
   const [query, setQuery] = useState("");
   const [filteredSuggestions, setFilteredSuggestions] = useState<Suggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -25,6 +26,7 @@ export const Autocomplete = ({ suggestions, onChange, name }: AutocompleteProps)
     setFilteredSuggestions(filtered);
     setShowSuggestions(true);
     setActiveIndex(0);
+    onChange(filtered[0]);
   };
 
   const handleClick = (suggestion: Suggestion) => {
@@ -33,6 +35,12 @@ export const Autocomplete = ({ suggestions, onChange, name }: AutocompleteProps)
     setShowSuggestions(false);
     onChange(suggestion);
   };
+
+  useEffect(() => {
+    if(!query){
+      onChange({value: "", label: ""});
+    }
+  }, [query]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "ArrowDown") {
@@ -57,7 +65,7 @@ export const Autocomplete = ({ suggestions, onChange, name }: AutocompleteProps)
         value={query}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        placeholder="Search..."
+        placeholder={placeholder}
         name={name}
         className={styles.input}
       />

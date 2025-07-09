@@ -74,7 +74,7 @@ const CommunityForm: React.FC = () => {
     value: '',
     whyJoin: '',
     project: '',
-    openToSpeak: false ,
+    openToSpeak: true ,
     };
 
 
@@ -96,6 +96,8 @@ const CommunityForm: React.FC = () => {
     }
     setIsLoading(false);
   };
+
+
 
   return (
     <>
@@ -163,48 +165,48 @@ const CommunityForm: React.FC = () => {
                   <ErrorMessage name="linkedInProfile" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <Autocomplete suggestions={countries} onChange={(value) => setFieldValue("country", value.label)} />
+                  <Autocomplete placeholder="Country" suggestions={countries} onChange={(value) => setFieldValue("country", value.label)} />
                   <ErrorMessage name="country" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label htmlFor="primaryFocus">What&apos;s your primary focus in the payments industry? (e.g., fintech founder, payments executive, crypto specialist, banking leader)</label>
+                  {/* <label htmlFor="primaryFocus">What&apos;s your primary focus in the payments industry? (e.g., fintech founder, payments executive, crypto specialist, banking leader)</label> */}
                   <Field
                     type="text"
                     name="primaryFocus"
-                    placeholder="Enter here..."
+                    placeholder="What&apos;s your primary focus in the payments industry? (e.g., fintech founder, payments executive, crypto specialist, banking leader)"
                     className={`${styles.inputField} ${errors.primaryFocus && touched.primaryFocus ? styles.error : ''}`}
                   />
                   <ErrorMessage name="primaryFocus" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label htmlFor="value">What specific value would you bring to other members of The-M3?
-                  </label>
+                  {/* <label htmlFor="value">What specific value would you bring to other members of The-M3?
+                  </label> */}
                   <Field
                     type="text"
                     name="value"
-                    placeholder="Enter here..."
+                    placeholder="What specific value would you bring to other members of The-M3?"
                     className={`${styles.inputField} ${errors.value && touched.value ? styles.error : ''}`}
                   />
                   <ErrorMessage name="value" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label htmlFor="whyJoin">Why do you want to join this exclusive community, and how will you actively contribute?
-                  </label>
+                  {/* <label htmlFor="whyJoin">Why do you want to join this exclusive community, and how will you actively contribute?
+                  </label> */}
                   <Field
                     type="text"
                     name="whyJoin"
-                    placeholder="Enter here..."
+                    placeholder="Why do you want to join this exclusive community, and how will you actively contribute?"
                     className={`${styles.inputField} ${errors.whyJoin && touched.whyJoin ? styles.error : ''}`}
                   />
                   <ErrorMessage name="whyJoin" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  <label htmlFor="project">⁠Share one significant payment industry achievement or project you&apos;ve led
-                  </label>
+                  {/* <label htmlFor="project">⁠Share one significant payment industry achievement or project you&apos;ve led
+                  </label> */}
                   <Field
                     type="text"
                     name="project"
-                    placeholder="Enter here..."
+                    placeholder="Share one significant payment industry achievement or project you&apos;ve led"
                     className={`${styles.inputField} ${errors.project && touched.project ? styles.error : ''}`}
                   />
                   <ErrorMessage name="project" component="div" className={styles.errorMessage} />

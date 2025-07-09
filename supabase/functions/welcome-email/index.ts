@@ -13,7 +13,7 @@
 //       Authorization: `Bearer ${RESEND_API_KEY}`,
 //     },
 //     body: JSON.stringify({
-//       from: 'The M3 Community <onboarding@resend.dev>',
+//       from: 'The M3 Community <noreply@the-m3-community.netlify.app>',
 //       to: email,
 //       subject: 'Welcome to The M3 Community!',
 //       html: `<strong>Hello ${name}, welcome to M3!</strong>`,
