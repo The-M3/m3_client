@@ -10,10 +10,14 @@
 
     @media (min-width: 1024px) {
         padding: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
       }
     @media (max-width: 500px) {
         margin-top: 0;
         overflow: unset;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .aboutImage {
