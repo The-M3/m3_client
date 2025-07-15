@@ -2,11 +2,10 @@ import React from 'react'
 import styles from './about.module.scss';
 import Image from 'next/image';
 
-
 const founder = {
   name: 'Josh',
   title: 'Founder, The M3',
-  imageUrl: '/images/founder.png',
+  imageUrl: '/images/MrJoshua.jpg',
   imageAlt: 'Josh - Founder, The M3'
 }
 
@@ -14,7 +13,15 @@ const AboutUs = () => {
   return (
     <section className={styles.aboutPage}>
       <div className={styles.aboutTopSection}>
-        <Image className={styles.aboutImage} src={'/svgs/aboutLogo.svg'} alt={'About Logo'} width={938} height={411} />
+        <Image 
+          className={styles.aboutImage} 
+          src={'/svgs/aboutLogo.svg'} 
+          alt={'About Logo'} 
+          width={938} 
+          height={411}
+          priority
+          quality={95}
+        />
         <div className={styles.description}>
 
           <h1 className={styles.heading}>
@@ -28,14 +35,32 @@ const AboutUs = () => {
         <h1 className={styles.whoHeading}>Who’s the community for?</h1>
         <div className={styles.whoList}>
           <div className={styles.whoItem}>
-            <Image className={styles.whoImage} width={268} height={462} style={{ objectFit: 'cover' }} src={'/images/who1.png'} alt={'Who 1'} />
+            <Image 
+              className={styles.whoImage} 
+              width={268} 
+              height={462} 
+              style={{ objectFit: 'cover' }} 
+              src={'/images/team-business-people-collaborating-plan-financial-strategy-doing-teamwork-create-sales-report-laptop-office-employees-working-project-strategy-analyze-career-growth.jpg'} 
+              alt={'team business people collaborating plan financial strategy doing teamwork create sales report laptop office employees working project strategy analyze career growth'}
+              quality={95}
+              sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
+            />
             <div className={styles.whoItemContent}>
               <h1 className={styles.whoItemHeading}>Technical Implementers</h1>
               <p className={styles.whoItemDescription}>Developers, engineers, and infrastructure leads building payment systems across Africa. They turn to The M3 for deep technical resources, peer collaboration, and implementation insights.</p>
             </div>
           </div>
           <div className={styles.whoItem}>
-            <Image className={styles.whoImage} width={268} height={462} style={{ objectFit: 'cover' }} src={'/images/who1.png'} alt={'Who 1'} />
+            <Image 
+              className={styles.whoImage} 
+              width={268} 
+              height={462} 
+              style={{ objectFit: 'cover' }} 
+              src={'/images/hr-team-interviewing-female-candidate.jpg'} 
+              alt={'hr team interviewing female candidate'}
+              quality={95}
+              sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
+            />
             <div className={styles.whoItemContent}>
               <h1 className={styles.whoItemHeading}>Strategic Decision Makers</h1>
               <p className={styles.whoItemDescription}>
@@ -43,7 +68,16 @@ const AboutUs = () => {
             </div>
           </div>
           <div className={styles.whoItem}>
-            <Image className={styles.whoImage} width={268} height={462} style={{ objectFit: 'cover' }} src={'/images/who1.png'} alt={'Who 1'} />
+            <Image 
+              className={styles.whoImage} 
+              width={268} 
+              height={462} 
+              style={{ objectFit: 'cover' }} 
+              src={'/images/medium-shot-colleagues-discussing-table.jpg'} 
+              alt={'medium shot colleagues discussing table'}
+              quality={95}
+              sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
+            />
             <div className={styles.whoItemContent}>
               <h1 className={styles.whoItemHeading}>Regulatory & Compliance Specialists</h1>
               <p className={styles.whoItemDescription}>
@@ -51,7 +85,16 @@ const AboutUs = () => {
             </div>
           </div>
           <div className={styles.whoItem}>
-            <Image className={styles.whoImage} width={268} height={462} style={{ objectFit: 'cover' }} src={'/images/who1.png'} alt={'Who 1'} />
+            <Image 
+              className={styles.whoImage} 
+              width={268} 
+              height={462} 
+              style={{ objectFit: "cover" }} 
+              src={'/images/smiley-coworkers-office-conversing.jpg'} 
+              alt={'smiley coworkers office conversing'}
+              quality={95}
+              sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
+            />
             <div className={styles.whoItemContent}>
               <h1 className={styles.whoItemHeading}>Ecosystem Enablers</h1>
               <p className={styles.whoItemDescription}>
@@ -105,10 +148,12 @@ const AboutUs = () => {
 
           <div className={styles.handshakeImage}>
             <Image 
-              src={'/images/handshake.png'} 
-              alt={'handshake'} 
+              src={'/images/team-business-people-collaborating-plan-financial-strategy-doing-teamwork-create-sales-report-laptop-office-employees-working-project-strategy-analyze-career-growth.jpg'} 
+              alt={'team-business-people-collaborating-plan-financial-strategy-doing-teamwork-create-sales-report-laptop-office-employees-working-project-strategy-analyze-career-growth'} 
               fill
-              style={{ objectFit: 'cover' }} 
+              style={{ objectFit: 'cover' }}
+              quality={95}
+              sizes="(max-width: 500px) 100vw, 50vw"
             />
           </div>
         </div>
