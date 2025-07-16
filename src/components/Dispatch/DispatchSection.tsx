@@ -14,7 +14,7 @@ const DispatchSection = () => {
   const handlSendDelivery = async () => {
     setIsLoading(true);
     try {
-      const { error } = await supabase.from("dispatch").insert({ email }).single()
+      const { error } = await supabase.from("newsletter").insert({ email }).single()
       if (error) {
         console.error(error)
         toast.error(Msg({ data: { title: "Something went wrong!", text: error?.message} }));
