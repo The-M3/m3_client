@@ -99,28 +99,6 @@ const CommunityForm: React.FC = () => {
     setIsLoading(false);
   };
 
-  const [activeTextArea, setActiveTextArea] = useState<Record<CommunityFormKeys, boolean>>({
-    fullname: false,
-    email: false,
-    company: false,
-    linkedInProfile: false,
-    country: false,
-    primaryFocus: false,
-    value: false,
-    whyJoin: false,
-    project: false,
-    openToSpeak: false,
-  })
-
-  const handleActiveTextArea = (key: CommunityFormKeys, value: boolean) => {
-    setActiveTextArea((prev) => ({
-      ...prev,
-      [key]: value
-    }))
-  }
-
-
-
   return (
     <>
       <ToastContainer />
