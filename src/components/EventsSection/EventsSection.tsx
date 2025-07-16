@@ -30,7 +30,6 @@ const FeaturedEvent = ({
   data
 }: FeaturedEventProps) => {
   const formattedDate = dayjs(data?.startDateTime).format('MMMM D, YYYY — h:mm A  [WAT]')
- console.log('data', data)
   return (
     <div className={styles.featuredEvent}>
       <div className={styles.featuredEventTop} style={{ backgroundImage: `url(/images/featureImage.png)`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
@@ -43,7 +42,7 @@ const FeaturedEvent = ({
       <div className={styles.featuredEventBottom}>
         <p className={styles.eventDescription}>{data?.description}</p>
         <p className={styles.eventSpeakers}><span style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>SPEAKERS :</span> {data?.speakers.join(", ")}</p>
-        <Button className={styles.ticketButton}>GET EVENT TICKET</Button>
+        <a target='_blank' href={data?.ticketLink || "#"}><Button className={styles.ticketButton}>GET EVENT TICKET</Button></a>
       </div>
     </div>
   );
@@ -52,9 +51,10 @@ const FeaturedEvent = ({
 type UpcomingEventProps = {
   date: string;
   title: string;
+  ticketLink: string;
 };
 
-const UpcomingEvent = ({ date, title }: UpcomingEventProps) => {
+const UpcomingEvent = ({ date, title, ticketLink }: UpcomingEventProps) => {
   const day = dayjs(date).format('DD')
   const month = dayjs(date).format('MMM')
   return (
@@ -64,10 +64,12 @@ const UpcomingEvent = ({ date, title }: UpcomingEventProps) => {
       </div>
       <div className={styles.upcomingEventContent}>
         <h4 className={styles.upcomingEventTitle}>{title}</h4>
-        <Button className={styles.upcomingEventButton}>
-          <span>EVENT DETAILS</span>
-          <Image src="/svgs/rightArrow.svg" alt="Right Arrow" width={11} height={7} />
-        </Button>
+        <a target='_blank' href={ticketLink}>
+          <Button className={styles.upcomingEventButton}>
+            <span>EVENT DETAILS</span>
+            <Image src="/svgs/rightArrow.svg" alt="Right Arrow" width={11} height={7} />
+          </Button>
+        </a>
       </div>
     </div>
   );
@@ -123,7 +125,10 @@ const EventsSection = () => {
       Our hybrid events blend expert-led virtual sessions with select in-person gatherings across key regions in Africa. Check the lineup and secure your spot for high-impact strategic roundtables, live innovation showcases, and pan-African connections.
       </p>
 
-      <div className={styles.eventGrid}>
+      {loading ? (
+        <div className={styles.spinner}></div>
+      ) : (
+        <div className={styles.eventGrid}>
         <FeaturedEvent
           data={featuredEvent as Event}
         />
@@ -133,6 +138,7 @@ const EventsSection = () => {
             <UpcomingEvent
               date={event?.startDateTime}
               title={event?.title}
+              ticketLink={event?.ticketLink || "#"}
           />
           ))
         }
@@ -150,7 +156,7 @@ const EventsSection = () => {
           title="How Central Bank’s Policies Shape Fintech Startups"
         /> */}
       </div>
-
+      )}  
     </section>
   );
 };
