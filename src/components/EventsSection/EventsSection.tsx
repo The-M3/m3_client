@@ -80,15 +80,6 @@ const EventsSection = () => {
   const [loading, setLoading] = useState(false);
   const [featuredEvent, setFeaturedEvent] = useState<Event | null>(null);
 
-  // const featuredEvent = {
-  //   title: "Securing Africa's Digital Wallets",
-  //   location: "Lagos, Nigeria",
-  //   date: "2025-06-22T16:00:00",
-  //   description: "Join the Chief Security Officer at PaySecure Africa, Adaobi Okonkwo, for an essential session on protecting Africa’s rapidly growing digital wallet ecosystem. Our speaker will explore real-world data breach incidents, modern encryption practices, and how to remain compliant amid evolving regulatory demands.",
-  //   speakers: "John Doe, Jane Smith",
-  //   imageSrc: "/images/featureImage.png",
-  //   altText: "A conference room filled with seated attendees facing a stage where a speaker presents"
-  // }
   const fetchEvents = async () => {
     try {
       setLoading(true);
@@ -104,7 +95,6 @@ const EventsSection = () => {
       }
 
       if (data) {
-        console.log(data);
         setEvents(data);
         setFeaturedEvent(data[0]);
       }
@@ -124,6 +114,11 @@ const EventsSection = () => {
       <p className={styles.subTitle}>
       Our hybrid events blend expert-led virtual sessions with select in-person gatherings across key regions in Africa. Check the lineup and secure your spot for high-impact strategic roundtables, live innovation showcases, and pan-African connections.
       </p>
+      {
+        events.length === 0 && (<div className={styles.noEvents}>
+          <p>Please stay tuned for more events</p>
+        </div>)
+      }
 
       {loading ? (
         <div className={styles.spinner}></div>
@@ -139,22 +134,10 @@ const EventsSection = () => {
               date={event?.startDateTime}
               title={event?.title}
               ticketLink={event?.ticketLink || "#"}
+              key={event?.id}
           />
           ))
         }
-
-        {/* <UpcomingEvent
-          date="2025-06-22T16:00:00"
-          title="How Central Bank’s Policies Shape Fintech Startups"
-        />
-        <UpcomingEvent
-          date="2025-07-04T16:00:00"
-          title="How Central Bank’s Policies Shape Fintech Startups"
-        />
-        <UpcomingEvent
-          date="2025-08-15T16:00:00"
-          title="How Central Bank’s Policies Shape Fintech Startups"
-        /> */}
       </div>
       )}  
     </section>
