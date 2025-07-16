@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './HeroSection.module.scss';
+import Image from 'next/image';
 import { Button } from '../ui';
 import Link from 'next/link';
-import OptimizedImage from '../OptimizedImage/OptimizedImage';
 
 const HeroSection = () => {
   return (
@@ -13,7 +13,7 @@ const HeroSection = () => {
       <div className={styles.descriptionContainer}>
         <div className={styles.imageContainer}>
           <div className={styles.heroImage}>
-            <OptimizedImage
+            <Image
               src="/images/heroImage.jpeg"
               alt="Four professionally dressed African professionals—two men and two women—smiling and gathered around a laptop, engaged in a collaborative discussion."
               fill
