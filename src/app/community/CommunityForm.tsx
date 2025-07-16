@@ -25,7 +25,6 @@ interface CommunityFormValues {
   openToSpeak: boolean;
 }
 
-type CommunityFormKeys = keyof CommunityFormValues;
 
 const validationSchema = Yup.object({
   fullname: Yup.string()
