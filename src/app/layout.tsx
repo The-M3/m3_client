@@ -9,9 +9,9 @@ export const metadata: Metadata = {
     template: '%s | The M3 Community'
   },
   icons: {
-    icon: '/svgs/appIcon.svg',
-    shortcut: '/svgs/appIcon.svg',
-    apple: '/svgs/appIcon.svg'
+    icon: 'favicon.ico',
+    shortcut: 'favicon.ico',
+    apple: 'favicon.ico'
   },
   description: 'The M3 Community is a pan-African network of payment technologists, fintech founders, investors, and infrastructure professionals working to build Africa\'s next-generation payment systems.',
   keywords: ['fintech', 'payments', 'africa', 'technology', 'blockchain', 'digital payments'],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
     images: [
       {
-        url: '/svgs/appIcon.svg',
+        url: 'favicon.ico',
         width: 1200,
         height: 630,
         alt: 'The M3 Community Logo',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'The M3 Community - Africa\'s Payment Technology Network',
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
-    images: ['/svgs/appIcon.svg'],
+    images: ['favicon.ico'],
     site: '@TheM3',
     creator: '@TheM3',
   },
