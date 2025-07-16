@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0",
+    "critters": "^0.0.25",
     "dayjs": "^1.11.13",
     "formik": "^2.4.6",
     "ldrs": "^1.1.7",
