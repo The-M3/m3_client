@@ -3,7 +3,7 @@
 import React from 'react'
 import styles from './DispatchSection.module.scss'
 import { Button } from '../ui'
-import supabase from '@/supabase-client';
+import supabase from '../../../supabase-client';
 import { toast, ToastContainer } from 'react-toastify'
 import { Msg } from '@/app/community/CommunityForm';
 

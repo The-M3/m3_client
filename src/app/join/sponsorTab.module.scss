@@ -62,15 +62,14 @@
         border-radius: 0.4rem;
         color: var(--text-color);
         font-size: 1.6rem;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-
         &::placeholder {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            font-family: 'Plantin MT Pro', sans-serif;
+
         }
+    }
+
+    .placeholder {
+        color: #767677
     }
 
     .fieldGroup{

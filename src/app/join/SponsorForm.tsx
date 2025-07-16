@@ -9,8 +9,8 @@ import styles from './sponsorTab.module.scss';
 import { Button } from '@/components/ui';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import supabase from '@/supabase-client';
 import { Msg } from '../community/CommunityForm';
+import supabase from '../../../supabase-client';
 
 interface SponsorFormValues {
   fullname: string;
