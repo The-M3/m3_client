@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 import styles from '../join/sponsorTab.module.scss';
 import { Button } from '@/components/ui';
-import supabase from '@/supabase-client';
+import supabase from '../../../supabase-client';
 import { Autocomplete } from '@/components/ui/autocomplete/Autocomplete';
 
 
@@ -24,6 +24,8 @@ interface CommunityFormValues {
   project: string;
   openToSpeak: boolean;
 }
+
+type CommunityFormKeys = keyof CommunityFormValues;
 
 const validationSchema = Yup.object({
   fullname: Yup.string()
@@ -74,8 +76,8 @@ const CommunityForm: React.FC = () => {
     value: '',
     whyJoin: '',
     project: '',
-    openToSpeak: true ,
-    };
+    openToSpeak: true,
+  };
 
 
 
@@ -96,6 +98,26 @@ const CommunityForm: React.FC = () => {
     }
     setIsLoading(false);
   };
+
+  const [activeTextArea, setActiveTextArea] = useState<Record<CommunityFormKeys, boolean>>({
+    fullname: false,
+    email: false,
+    company: false,
+    linkedInProfile: false,
+    country: false,
+    primaryFocus: false,
+    value: false,
+    whyJoin: false,
+    project: false,
+    openToSpeak: false,
+  })
+
+  const handleActiveTextArea = (key: CommunityFormKeys, value: boolean) => {
+    setActiveTextArea((prev) => ({
+      ...prev,
+      [key]: value
+    }))
+  }
 
 
 
@@ -169,45 +191,49 @@ const CommunityForm: React.FC = () => {
                   <ErrorMessage name="country" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  {/* <label htmlFor="primaryFocus">What&apos;s your primary focus in the payments industry? (e.g., fintech founder, payments executive, crypto specialist, banking leader)</label> */}
-                  <Field
-                    type="text"
-                    name="primaryFocus"
-                    placeholder="What&apos;s your primary focus in the payments industry? (e.g., fintech founder, payments executive, crypto specialist, banking leader)"
+
+                  <textarea
+                    placeholder="What&apos;s your primary focus in the payments industry? (e.g., fintech founder, payments executive, crypto specialist, banking leader)
+"
+                    rows={3}
+                    style={{ width: '100%' }}
                     className={`${styles.inputField} ${errors.primaryFocus && touched.primaryFocus ? styles.error : ''}`}
+                    name="primaryFocus"
+
                   />
                   <ErrorMessage name="primaryFocus" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  {/* <label htmlFor="value">What specific value would you bring to other members of The-M3?
-                  </label> */}
-                  <Field
-                    type="text"
+
+                  <textarea
                     name="value"
                     placeholder="What specific value would you bring to other members of The-M3?"
+                    rows={2}
+                    style={{ width: '100%' }}
                     className={`${styles.inputField} ${errors.value && touched.value ? styles.error : ''}`}
+
                   />
                   <ErrorMessage name="value" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
-                  {/* <label htmlFor="whyJoin">Why do you want to join this exclusive community, and how will you actively contribute?
-                  </label> */}
-                  <Field
-                    type="text"
-                    name="whyJoin"
+                   <textarea
+                   name="whyJoin"
                     placeholder="Why do you want to join this exclusive community, and how will you actively contribute?"
+                    rows={2}
+                    style={{ width: '100%' }}
                     className={`${styles.inputField} ${errors.whyJoin && touched.whyJoin ? styles.error : ''}`}
+
                   />
                   <ErrorMessage name="whyJoin" component="div" className={styles.errorMessage} />
                 </div>
                 <div className={styles.fieldGroup}>
                   {/* <label htmlFor="project">⁠Share one significant payment industry achievement or project you&apos;ve led
                   </label> */}
-                  <Field
-                    type="text"
-                    name="project"
-                    placeholder="Share one significant payment industry achievement or project you&apos;ve led"
-                    className={`${styles.inputField} ${errors.project && touched.project ? styles.error : ''}`}
+                                     <textarea
+                   name="project"
+                   placeholder="Share one significant payment industry achievement or project you&apos;ve led"
+                   className={`${styles.inputField} ${errors.project && touched.project ? styles.error : ''}`}
+
                   />
                   <ErrorMessage name="project" component="div" className={styles.errorMessage} />
                 </div>
