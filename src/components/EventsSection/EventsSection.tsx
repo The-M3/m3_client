@@ -29,7 +29,7 @@ export interface Event {
 const FeaturedEvent = ({
   data
 }: FeaturedEventProps) => {
-  const formattedDate = dayjs(data?.startDateTime).format('MMMM D, YYYY — h:mm A  [WAT]')
+  const formattedDate = dayjs(data?.startDateTime).format(`MMMM D, YYYY — h:mm A  [${data?.timezone || 'WAT'}]`)
   return (
     <div className={styles.featuredEvent}>
       <div className={styles.featuredEventTop} style={{ backgroundImage: `url(/images/featureImage.png)`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
