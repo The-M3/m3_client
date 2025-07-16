@@ -94,7 +94,7 @@ const Navbar = () => {
 
       <div className={`${styles.navLinks} ${isMenuOpen ? styles.active : ''}`}>
         <Link href="/about" className={`${styles.link} ${pathName === '/about' ? styles.active : ''}`}>About us</Link>
-        <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('events-section')}>Events</button>
+{ pathName === "/" && <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('events-section')}>Events</button>}
         {/* <Link href="/resources" className={`${styles.link} ${pathName === '/resources' ? styles.active : ''}`}>Resources</Link>
         <Link href="/membership" className={`${styles.link} ${pathName === '/membership' ? styles.active : ''}`}>Membership</Link> */}
         {/* <button className={`${styles.link} ${styles.btnLink} ${styles.scrollButton}`} onClick={() => scrollToPage('sponsors-section')}>Sponsors</button> */}

@@ -5,7 +5,7 @@ import Image from 'next/image';
 const founder = {
   name: 'Josh',
   title: 'Founder, The M3',
-  imageUrl: '/images/MrJoshua.jpg',
+  imageUrl: '/images/MrJoshua.jpeg',
   imageAlt: 'Josh - Founder, The M3'
 }
 
