@@ -41,6 +41,12 @@
       grid-row: auto;
     }
 
+    // Center the grid when there's only one child
+    &:has(> :only-child) {
+      justify-content: center;
+      max-width: 60rem;
+      margin: 0 auto;
+    }
 
     @media (min-width: 768px) {
       grid-template-columns: 1.3fr 1fr;
@@ -49,6 +55,14 @@
       > :first-child {
         grid-row: 1 / span 3;
         /* span all 3 rows in the first column */
+      }
+
+      // On larger screens, center single item differently
+      &:has(> :only-child) {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        max-width: 70rem;
+        margin: 0 auto;
       }
     }
   }

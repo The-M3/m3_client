@@ -141,7 +141,7 @@ const EventsSection = () => {
       }
 
       {loading ? (
-        <div className={styles.spinner}></div>
+        <div className={styles.spinner} />
       ) : (
         <div className={styles.eventGrid}>
         <FeaturedEvent
