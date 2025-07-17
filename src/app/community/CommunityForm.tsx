@@ -82,6 +82,7 @@ const CommunityForm: React.FC = () => {
 
   const handleSubmit = async (values: CommunityFormValues) => {
     setIsLoading(true);
+    console.log('values', values)
     try {
       const { error } = await supabase.from("communityMembers").insert(values).single()
       if (error) {
@@ -176,6 +177,7 @@ const CommunityForm: React.FC = () => {
                     style={{ width: '100%' }}
                     className={`${styles.inputField} ${errors.primaryFocus && touched.primaryFocus ? styles.error : ''}`}
                     name="primaryFocus"
+                    onChange={(e) => setFieldValue("primaryFocus", e.target.value) }
 
                   />
                   <ErrorMessage name="primaryFocus" component="div" className={styles.errorMessage} />
@@ -188,6 +190,7 @@ const CommunityForm: React.FC = () => {
                     rows={2}
                     style={{ width: '100%' }}
                     className={`${styles.inputField} ${errors.value && touched.value ? styles.error : ''}`}
+                    onChange={(e) => setFieldValue("value", e.target.value) }
 
                   />
                   <ErrorMessage name="value" component="div" className={styles.errorMessage} />
@@ -199,6 +202,7 @@ const CommunityForm: React.FC = () => {
                     rows={2}
                     style={{ width: '100%' }}
                     className={`${styles.inputField} ${errors.whyJoin && touched.whyJoin ? styles.error : ''}`}
+                    onChange={(e) => setFieldValue("whyJoin", e.target.value) }
 
                   />
                   <ErrorMessage name="whyJoin" component="div" className={styles.errorMessage} />
@@ -210,6 +214,7 @@ const CommunityForm: React.FC = () => {
                    name="project"
                    placeholder="Share one significant payment industry achievement or project you&apos;ve led"
                    className={`${styles.inputField} ${errors.project && touched.project ? styles.error : ''}`}
+                   onChange={(e) => setFieldValue("project", e.target.value) }
 
                   />
                   <ErrorMessage name="project" component="div" className={styles.errorMessage} />
