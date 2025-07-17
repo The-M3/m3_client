@@ -30,10 +30,15 @@ const FeaturedEvent = ({
   data
 }: FeaturedEventProps) => {
   const formattedDate = dayjs(data?.startDateTime).format(`MMMM D, YYYY — h:mm A  [${data?.timezone || 'WAT'}]`)
+  const inputDate = dayjs(data?.startDateTime); // or any date
+  const now = dayjs();
+  const isPast = inputDate.isBefore(now);
+
   return (
     <div className={styles.featuredEvent}>
       <div className={styles.featuredEventTop} style={{ backgroundImage: `url(/images/featureImage.png)`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
-       <Countdown targetDate={data?.startDateTime} /><div className={styles.eventContent}>
+       {isPast ? null : <Countdown targetDate={data?.startDateTime} />}
+       <div className={styles.eventContent}>
           <h2 className={styles.eventTitle}>{data?.title}</h2>
           <p className={styles.eventLocation}>{data?.location}</p>
           <p className={styles.eventDate}>{formattedDate}</p>
@@ -80,6 +85,18 @@ const EventsSection = () => {
   const [loading, setLoading] = useState(false);
   const [featuredEvent, setFeaturedEvent] = useState<Event | null>(null);
 
+
+  const filterEvent = (list: Event[]) => {
+    const newEvents = list.filter((event) => {
+      const inputDate = dayjs(event?.startDateTime); // or any date
+      const now = dayjs();
+      const isPast = inputDate.isBefore(now);
+      return !isPast
+    })
+
+    return newEvents
+  }
+
   const fetchEvents = async () => {
     try {
       setLoading(true);
@@ -95,8 +112,9 @@ const EventsSection = () => {
       }
 
       if (data) {
-        setEvents(data);
-        setFeaturedEvent(data[0]);
+        const res = filterEvent(data)
+        setEvents(res);
+        setFeaturedEvent(res[0]);
       }
     } catch (err: { message: string } | unknown) {
       console.error('Error fetching events:', err);
@@ -108,6 +126,8 @@ const EventsSection = () => {
   useEffect(() => {
     fetchEvents();
   }, []);
+
+
   return (
     <section id="events-section" className={styles.eventsSection}>
       <h2 className={styles.title}>Explore What’s Ahead in the M3 Community</h2>
