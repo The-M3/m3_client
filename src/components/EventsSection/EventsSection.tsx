@@ -33,6 +33,7 @@ const FeaturedEvent = ({
   const inputDate = dayjs(data?.startDateTime); // or any date
   const now = dayjs();
   const isPast = inputDate.isBefore(now);
+  console.log('date', data)
 
   return (
     <div className={styles.featuredEvent}>
@@ -112,7 +113,9 @@ const EventsSection = () => {
       }
 
       if (data) {
+        console.log('data', data)
         const res = filterEvent(data)
+        console.log('res', res)
         setEvents(res);
         setFeaturedEvent(res[0]);
       }
@@ -126,6 +129,10 @@ const EventsSection = () => {
   useEffect(() => {
     fetchEvents();
   }, []);
+
+  useEffect(() => {
+    console.log("featuredEvent", featuredEvent)
+  }, [featuredEvent])
 
 
   return (
@@ -144,9 +151,9 @@ const EventsSection = () => {
         <div className={styles.spinner} />
       ) : (
         <div className={styles.eventGrid}>
-        <FeaturedEvent
+        {featuredEvent && <FeaturedEvent
           data={featuredEvent as Event}
-        />
+        />}
 
         {
           events.filter((_, index) => index > 0).map((event) => (
