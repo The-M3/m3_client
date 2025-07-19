@@ -3,16 +3,16 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://the-m3-community.netlify.app'),
+  metadataBase: new URL('https://them3.co'),
   title: {
     default: 'The M3 Community - Africa\'s Payment Technology Network',
     template: '%s | The M3 Community'
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico'
-  },
+  // icons: {
+  //   icon: '/favicon.ico',
+  //   shortcut: '/favicon.ico',
+  //   apple: '/favicon.ico'
+  // },
   description: 'The M3 Community is a pan-African network of payment technologists, fintech founders, investors, and infrastructure professionals working to build Africa\'s next-generation payment systems.',
   keywords: ['fintech', 'payments', 'africa', 'technology', 'blockchain', 'digital payments'],
   authors: [{ name: 'The M3 Community' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://the-m3-community.netlify.app',
+    url: 'https://them3.co',
     siteName: 'The M3 Community',
     title: 'The M3 Community - Africa\'s Payment Technology Network',
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'The M3 Community - Africa\'s Payment Technology Network',
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
-    images: ['favicon.ico'],
+    // images: ['favicon.ico'],
     site: '@TheM3',
     creator: '@TheM3',
   },
