@@ -155,7 +155,7 @@ const AboutUs = () => {
         <div className={styles.founderContentRight}>
           <h1 className={styles.founderContentRightHeading}>To the Builders Powering Africa&apos;s Payment Future</h1>
           <p className={styles.founderQuote}>
-          In the last ten years,I&apos;ve been knee-deep in Africa&apos;s payments world. From helping farmers save just $1 a week through USSD to buy seeds and fertilizer, to building payment systems that moved millions of dollars globally.
+          In the last ten years, I&apos;ve been knee-deep in Africa&apos;s payments world. From helping farmers save just $1 a week through USSD to buy seeds and fertilizer, to building payment systems that moved millions of dollars globally.
           </p><p className={styles.founderQuote}>
           But here&apos;s what I keep running into: brilliant companies struggle with integration headaches. Policy makers create regulations without understanding technical realities. Talented builders work in isolation when they should be learning from each other.
 These aren&apos;t technical problems; they&apos;re connection problems.
