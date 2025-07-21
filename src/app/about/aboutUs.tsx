@@ -40,7 +40,7 @@ const AboutUs = () => {
               width={268} 
               height={462} 
               style={{ objectFit: 'cover' }} 
-              src={'/images/team-business-people-collaborating-plan-financial-strategy-doing-teamwork-create-sales-report-laptop-office-employees-working-project-strategy-analyze-career-growth.jpg'} 
+              src={'/images/about1.jpeg'} 
               alt={'team business people collaborating plan financial strategy doing teamwork create sales report laptop office employees working project strategy analyze career growth'}
               quality={95}
               sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
@@ -56,7 +56,7 @@ const AboutUs = () => {
               width={268} 
               height={462} 
               style={{ objectFit: 'cover' }} 
-              src={'/images/hr-team-interviewing-female-candidate.jpg'} 
+              src={'/images/about2.jpg'} 
               alt={'hr team interviewing female candidate'}
               quality={95}
               sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
@@ -73,7 +73,7 @@ const AboutUs = () => {
               width={268} 
               height={462} 
               style={{ objectFit: 'cover' }} 
-              src={'/images/medium-shot-colleagues-discussing-table.jpg'} 
+              src={'/images/about3.jpg'} 
               alt={'medium shot colleagues discussing table'}
               quality={95}
               sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
@@ -90,7 +90,7 @@ const AboutUs = () => {
               width={268} 
               height={462} 
               style={{ objectFit: "cover" }} 
-              src={'/images/smiley-coworkers-office-conversing.jpg'} 
+              src={'/images/about4.jpeg'} 
               alt={'smiley coworkers office conversing'}
               quality={95}
               sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
