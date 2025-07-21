@@ -27,7 +27,12 @@ const AboutUs = () => {
           <h1 className={styles.heading}>
             For Builders <br />by Builders
           </h1>
-          <p className={styles.subhead}>We are a Pan-African community of technologists, engineers, and founders advancing financial innovation through shared knowledge, infrastructure, and collective growth.</p>
+          <p className={styles.subhead}>
+          We unite business owners, engineering leaders, product leaders, compliance and other experts to advance financial technology through shared knowledge and collaboration.
+          </p>
+          <p className={styles.subhead}>
+          Our community members build payment solutions, share expertise, and create the infrastructure that drives breakthrough innovations. Join the leaders shaping the future of digital finance.
+          </p>
         </div>
       </div>
 
@@ -47,7 +52,11 @@ const AboutUs = () => {
             />
             <div className={styles.whoItemContent}>
               <h1 className={styles.whoItemHeading}>Technical Implementers</h1>
-              <p className={styles.whoItemDescription}>Developers, engineers, and infrastructure leads building payment systems across Africa. They turn to The M3 for deep technical resources, peer collaboration, and implementation insights.</p>
+              <p className={styles.whoItemDescription}>
+              The people funding, building, and scaling Africa&apos;s payment revolution need better connections. The M3 bridges that gap. We connect investors, partners, policy makers, and accelerators with the engineers, product leaders, and operators actually building payment solutions across Africa.
+              Get real-time market intelligence. Access key decision-makers. Shape the future of African payments.
+
+              </p>
             </div>
           </div>
           <div className={styles.whoItem}>
@@ -132,18 +141,24 @@ const AboutUs = () => {
           </div>
 
           <p className={styles.founderQuote}>
-            When we began this journey, the goal was simple: to create a platform where Africa&apos;s payment technologists could access technical depth, industry insights, and a network as ambitious as they are. Today, that vision is becoming reality, and I am grateful to stand alongside a growing community of technical implementers, decision-makers, regulators, and ecosystem enablers who are passionate about shaping the future of fintech on the continent.</p>
-          <p className={styles.founderQuote}>We believe the future of finance in Africa won&apos;t be imported it will be designed here, by people who understand the nuances of our markets, the power of collaboration, and the impact of open knowledge. That&apos;s what The M3 represents.</p>
-          <p className={styles.founderQuote}>To everyone who shares in this mission thank you. Whether you&apos;re building infrastructure, writing policy, or investing in ideas, you are a vital part of this movement.</p>
+          That&apos;s exactly why I built The M3. We needed a place where the people building African fintech could meet the people funding it, regulating it, and using it. Where engineers could talk directly to policy makers. Where founders could learn from operators who&apos;ve solved similar challenges.
+          </p>
+          <p className={styles.founderQuote}>
+          Africa&apos;s payment future is being designed right here by people who understand that a farmer in Ghana has different needs than a trader in Lagos, and that both deserve world-class solutions.
+          </p>
+          <p className={styles.founderQuote}>
+          The M3 is where those solutions get born, tested, and scaled together.
+          </p>
 
         </div>
 
         <div className={styles.founderContentRight}>
           <h1 className={styles.founderContentRightHeading}>To the Builders Powering Africa&apos;s Payment Future</h1>
           <p className={styles.founderQuote}>
-            I&apos;m incredibly proud to welcome you to The M3 a community born from the belief that Africa&apos;s payment ecosystem deserves not only to catch up, but to lead globally.
+          In the last ten years,I&apos;ve been knee-deep in Africa&apos;s payments world. From helping farmers save just $1 a week through USSD to buy seeds and fertilizer, to building payment systems that moved millions of dollars globally.
           </p><p className={styles.founderQuote}>
-            As someone who has spent years at the intersection of technology, infrastructure, and financial systems across the continent, I&apos;ve witnessed firsthand both the challenges and the extraordinary potential that exists here. The M3 was created to unlock that potential by building a space where the builders, thinkers, and enablers of African fintech can connect, collaborate, and grow together.
+          But here&apos;s what I keep running into: brilliant companies struggle with integration headaches. Policy makers create regulations without understanding technical realities. Talented builders work in isolation when they should be learning from each other.
+These aren&apos;t technical problems; they&apos;re connection problems.
           </p>
 
           <div className={styles.handshakeImage}>

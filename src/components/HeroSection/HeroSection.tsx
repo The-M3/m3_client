@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className={styles.heroSection}>
       <h1 className={styles.heading}>
-      The Premier Network Advancing African Payment Systems and Fintech Infrastructure
+      A NETWORK OF PROFESSIONALS SHAPING AFRICA’S PAYMENT ECOSYSTEM
       </h1>
       <div className={styles.descriptionContainer}>
         <div className={styles.imageContainer}>
@@ -24,7 +24,9 @@ const HeroSection = () => {
         </div>
         <div className={styles.description}>
           <p>
-          The M3 is the pan-African community where payment engineers, product leaders, and infrastructure specialists collaborate to shape the future of digital finance in Africa. Gain exclusive access to deep technical insights, real-world implementation playbooks, and the innovators building the next generation of Africa’s financial infrastructure.
+          The M3 brings together the people building Africa&apos;s payment systems. If you&apos;re working on payment infrastructure, integrating solutions, or crafting policy that matters, this is where you belong.
+          You&apos;ll get inside access to how things work, the technical details that matter, the strategies that succeed, and direct connections to the folks making it all happen across the continent.
+
           </p>
           <Link href="/community">
           <Button>

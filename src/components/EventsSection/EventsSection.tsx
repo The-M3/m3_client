@@ -139,7 +139,9 @@ const EventsSection = () => {
     <section id="events-section" className={styles.eventsSection}>
       <h2 className={styles.title}>Explore What’s Ahead in the M3 Community</h2>
       <p className={styles.subTitle}>
-      Our hybrid events blend expert-led virtual sessions with select in-person gatherings across key regions in Africa. Check the lineup and secure your spot for high-impact strategic roundtables, live innovation showcases, and pan-African connections.
+      Join us for dynamic hybrid events that bring together carefully selected in-person gatherings across key African cities with comprehensive virtual sessions led by industry experts.
+      Experience meaningful connections with professionals from across the continent, witness cutting-edge innovation demos, and participate in impactful strategic discussions.
+
       </p>
       {
         events.length === 0 && (<div className={styles.noEvents}>
