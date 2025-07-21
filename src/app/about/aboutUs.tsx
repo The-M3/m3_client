@@ -163,7 +163,7 @@ These aren&apos;t technical problems; they&apos;re connection problems.
 
           <div className={styles.handshakeImage}>
             <Image 
-              src={'/images/team-business-people-collaborating-plan-financial-strategy-doing-teamwork-create-sales-report-laptop-office-employees-working-project-strategy-analyze-career-growth.jpg'} 
+              src={'/images/team-meetup.jpg'} 
               alt={'team-business-people-collaborating-plan-financial-strategy-doing-teamwork-create-sales-report-laptop-office-employees-working-project-strategy-analyze-career-growth'} 
               fill
               style={{ objectFit: 'cover' }}
