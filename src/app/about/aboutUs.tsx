@@ -51,7 +51,7 @@ const AboutUs = () => {
               sizes="(max-width: 500px) 0px, (max-width: 1109px) 100vw, 268px"
             />
             <div className={styles.whoItemContent}>
-              <h1 className={styles.whoItemHeading}>Technical Implementers</h1>
+              <h1 className={styles.whoItemHeading}>Technical Implementation</h1>
               <p className={styles.whoItemDescription}>
               The people funding, building, and scaling Africa&apos;s payment revolution need better connections. The M3 bridges that gap. We connect investors, partners, policy makers, and accelerators with the engineers, product leaders, and operators actually building payment solutions across Africa.
               Get real-time market intelligence. Access key decision-makers. Shape the future of African payments.
