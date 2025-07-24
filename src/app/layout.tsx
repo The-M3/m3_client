@@ -4,10 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://them3.co'),
-  title: {
-    default: 'The M3 - A Network of Professionals Shaping Africa\'s Payment Ecosystem',
-    template: '%s | The M3 Community'
-  },
+  title: 'The M3 - A Network of Professionals Shaping Africa\'s Payment Ecosystem',
   // icons: {
   //   icon: '/favicon.ico',
   //   shortcut: '/favicon.ico',
