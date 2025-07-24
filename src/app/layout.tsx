@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://them3.co'),
   title: {
-    default: 'The M3 Community - Africa\'s Payment Technology Network',
+    default: 'The M3 - A Network of Professionals Shaping Africa\'s Payment Ecosystem',
     template: '%s | The M3 Community'
   },
   // icons: {
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://them3.co',
     siteName: 'The M3 Community',
-    title: 'The M3 Community - Africa\'s Payment Technology Network',
+    title: 'The M3 - A Network of Professionals Shaping Africa\'s Payment Ecosystem',
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The M3 Community - Africa\'s Payment Technology Network',
+    title: 'The M3 - A Network of Professionals Shaping Africa\'s Payment Ecosystem',
     description: 'Join Africa\'s leading community of payment technologists, fintech founders, and infrastructure professionals.',
     // images: ['favicon.ico'],
-    site: '@TheM3',
-    creator: '@TheM3',
+    site: '@TheM3_HQ',
+    creator: '@TheM3_HQ',
   },
   robots: {
     index: true,
