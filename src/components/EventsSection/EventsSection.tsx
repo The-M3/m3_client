@@ -48,8 +48,8 @@ const FeaturedEvent = ({
       </div>
       <div className={styles.featuredEventBottom}>
         <p className={styles.eventDescription}>{data?.description}</p>
-        <p className={styles.eventSpeakers}><span style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>SPEAKERS :</span> {data?.speakers.join(", ")}</p>
-        <a target='_blank' href={data?.ticketLink || "#"}><Button className={styles.ticketButton}>GET EVENT TICKET</Button></a>
+{ data?.speakers.length > 0 && <p className={styles.eventSpeakers}><span style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>SPEAKERS :</span> {data?.speakers.join(", ")}</p>
+}        <a target='_blank' href={data?.ticketLink || "#"}><Button className={styles.ticketButton}>GET EVENT TICKET</Button></a>
       </div>
     </div>
   );
