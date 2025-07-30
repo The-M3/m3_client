@@ -23,6 +23,7 @@ export interface Event {
   hasEnded: boolean;       // Default: false
   created_at?: Date;         // Auto-generated
   updated_at?: Date;         // Auto-generated
+  bannerImage?: string;
 }
 
 
@@ -33,11 +34,11 @@ const FeaturedEvent = ({
   const inputDate = dayjs(data?.startDateTime); // or any date
   const now = dayjs();
   const isPast = inputDate.isBefore(now);
-  console.log('date', data)
+  const fallBackImage = '/images/featureImage.png'
 
   return (
     <div className={styles.featuredEvent}>
-      <div className={styles.featuredEventTop} style={{ backgroundImage: `url(/images/featureImage.png)`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
+      <div className={styles.featuredEventTop} style={{ backgroundImage: `url(${data?.bannerImage || fallBackImage})`, backgroundSize: 'cover', backgroundPosition: 'center', }}>
        {isPast ? null : <Countdown targetDate={data?.startDateTime} />}
        <div className={styles.eventContent}>
           <h2 className={styles.eventTitle}>{data?.title}</h2>
@@ -129,10 +130,6 @@ const EventsSection = () => {
   useEffect(() => {
     fetchEvents();
   }, []);
-
-  useEffect(() => {
-    console.log("featuredEvent", featuredEvent)
-  }, [featuredEvent])
 
 
   return (

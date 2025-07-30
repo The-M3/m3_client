@@ -64,7 +64,7 @@ const AboutUs = () => {
               className={styles.whoImage} 
               width={268} 
               height={462} 
-              style={{ objectFit: 'cover' }} 
+              style={{ objectFit: 'fill' }} 
               src={'/images/about2.jpg'} 
               alt={'hr team interviewing female candidate'}
               quality={95}
