@@ -2,6 +2,7 @@
 import React from 'react';
 import { convertFromRaw } from 'draft-js';
 import { stateToHTML } from 'draft-js-export-html';
+import styles from './RichTextRenderer.module.scss'
 
 interface RichTextRendererProps {
   content: string;
@@ -32,7 +33,7 @@ export function RichTextRenderer({ content, className }: RichTextRendererProps) 
 
   return (
     <div
-      className={className}
+      className={`${styles.container} ${className}`}
       dangerouslySetInnerHTML={{ __html: htmlContent }}
     />
   );
