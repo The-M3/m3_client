@@ -5,6 +5,7 @@ import styles from './EventsSection.module.scss';
 import { Button } from '../ui';
 import Countdown from './Countdown';
 import supabase from '../../../supabase-client';
+import { RichTextRenderer } from '../RichTextRenderer';
 
 type FeaturedEventProps = {
   data: Event
@@ -47,7 +48,8 @@ const FeaturedEvent = ({
         </div>
       </div>
       <div className={styles.featuredEventBottom}>
-        <p className={styles.eventDescription}>{data?.description}</p>
+        {/* <p className={styles.eventDescription}>{data?.description}</p> */}
+        <RichTextRenderer className={styles.eventDescription} content={data?.description} />
 { data?.speakers.length > 0 && <p className={styles.eventSpeakers}><span style={{ fontWeight: 'bold', fontSize: '1.3rem' }}>SPEAKERS :</span> {data?.speakers.join(", ")}</p>
 }        <a target='_blank' href={data?.ticketLink || "#"}><Button className={styles.ticketButton}>GET EVENT TICKET</Button></a>
       </div>
