@@ -22,6 +22,7 @@ export function RichTextRenderer({ content, className }: RichTextRendererProps) 
       
       return html;
     } catch (error) {
+      console.error(error)
       // Fallback to plain text if parsing fails (for backward compatibility)
       return content.replace(/\n/g, '<br />');
     }
